@@ -1,0 +1,588 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+@import url(http://fonts.googleapis.com/css?family=Bitter:400);
+
+html,body {
+	height:100%;
+    background:center no-repeat fixed url('/images/background.jpg');
+    background-size: cover;
+    color:#444;
+    font-family: 'Lato', sans-serif;
+}
+
+@media (min-width:768px) {
+    h1 {
+        font-size:68px;
+    }
+}
+
+a {
+    color:#999;
+}
+
+a:hover {
+    color:#111;
+}
+
+.btn,.well,.panel {
+    border-radius:0;
+}
+
+.btn-danger {
+    background-color:#f44d3c;
+}
+
+.text-danger, a.text-danger {
+    color:#f44d3c;
+}
+
+.btn-huge {
+    padding:17px 22px;
+    font-size:22px;
+}
+
+.lato {
+    font-family: 'Lato', sans-serif;
+}
+
+.bitter {
+    font-family: 'Bitter', serif;
+}
+
+.icon-bar {
+	background-color:#fff;
+}
+
+.navbar-trans {
+	background-color:#2b2b2b;
+    color:#cdcdcd;
+    border-width:0;
+}
+
+.navbar-trans .navbar-brand, .navbar-trans >.container-fluid .navbar-brand {
+    padding: 14px;
+    color:#f44d3c;
+}
+
+.navbar-trans li>a:focus,.navbar-trans li.active {
+	background-color:#f44d3c;
+	color:#333;
+}
+
+.navbar-trans li>a:hover {
+	background-color:#f44d3c;
+	color:#fff;
+	opacity:0.5;
+}
+
+.navbar-trans a{
+    color:#cdcdcd;
+    letter-spacing:1px;
+}
+
+.navbar-trans .form-control:focus {
+	border-color: #eee;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(100,100,100,0.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(100,100,100,0.6);
+}
+
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin-left: -15px;
+  display: block;
+  padding: 7px;
+  text-align: center;
+  z-index:-1
+}
+
+.scroll-up {
+  position: fixed;
+  display: none;
+  z-index: 999;
+  bottom: 2em;
+  right: 2em;
+}
+
+.scroll-up a {
+  background-color: rgba(135, 135, 135, 0.5);
+  display: block;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+section {
+	padding-top:70px;
+    padding-bottom:50px;
+    min-height:100%;
+    min-height:calc(100% - 0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+@media (min-width:768px) {
+    .v-center {
+        height: 50%;
+        overflow: visible;
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+    }
+}
+
+#section1 {
+	background-color: rgba(0,0,0,0.7);
+	color:#fff;
+	font-family: 'Bitter', serif;
+}
+
+#section1, #section3 {
+	background-color: rgba(0,0,0,0.7);
+	color:#fff;
+}
+
+.quote{
+	background-color: rgba(0,0,0,0.7);
+	color:#fff;
+	font-family: 'lato', serif;
+}
+
+.photo{
+	background-color: rgba(0, 0, 0, 0.7);
+	color:#fff;
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*#cleanup{
+	  background: url('/images/cleanup.jpg');
+		background-repeat:no-repeat;
+		background-size:100%;
+		background-position:center;
+}
+
+#family{
+	  background: url('/images/family.jpg');
+		background-repeat:no-repeat;
+		background-size:100%;
+		background-position:center;
+}*/
+
+#section4 {
+	background-color: #f6f6f6;
+	color:#444;
+}
+
+#section2 {
+	background-color: #fff;
+}
+
+#section3 {
+	background-color: rgba(0,0,0,0.9);
+}
+
+#section5 {
+	background-color: #fff;
+}
+
+#section6 {
+    background-color: #eee;
+	min-height:130px;
+	padding-top:40px;
+	padding-bottom:40px;
+}
+
+
+footer {
+	background-color:#2b2b2b;
+    color:#ddd;
+    min-height:100px;
+    padding-top:20px;
+    padding-bottom:40px;
+}
+
+footer .nav>li>a {
+    padding: 3px;
+    color: #f44d3c;
+}
+
+footer .nav>li>a:hover {
+    background-color:transparent;
+	color:#fff;
+}
+
+/* MANDEEPAK'S CSS*/
+
+.axis path,
+.axis line,
+.axis1 path,
+.axis1 line {
+  fill: none;
+  stroke: #E6E7E8;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path, .x.axis1 path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.legend-box {
+  cursor: pointer;
+}
+
+#mouse-tracker {
+  stroke: #E6E7E8;
+  stroke-width: 1px;
+}
+
+.hover-line {
+  stroke: #E6E7E8;
+  fill: none;
+  stroke-width: 1px;
+  left: 10px;
+  shape-rendering: crispEdges;
+  opacity: 1e-6;
+}
+
+.hover-text {
+  stroke: none;
+  font-size: 30px;
+  font-weight: bold;
+  fill: #000000;
+}
+
+.tooltip {
+  font-weight: normal;
+}
+
+.brush .extent {
+  stroke: #FFF;
+  shape-rendering: crispEdges;
+}
+
+.legend rect {
+  fill:white;
+  stroke:black;
+  opacity:0.3;}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.tooltipbar{ background-color:rgba(0,50,187,0.5);;
+    margin: 10px;
+    height: 50px;
+    width: 150px;
+    padding-left: 10px;
+    padding-top: 10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+}
+
+
+.rectbar {
+    fill: steelblue;
+
+}
+
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(220,220,220, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(220,220,220, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+
+
+.tagcloud {
+    left: 0px;
+    top: 0px;
+}
+path {
+    stroke: white;
+    stroke-width: 0.25px;
+    fill: grey;
+}
+.states {
+    fill: #ccc;
+    stroke: #fff;
+}
+
+.symbol {
+    fill: steelblue;
+    fill-opacity: .8;
+    stroke: #fff;
+}
+
+.tooltip{ background-color:rgba(68,136,187,0.5);;
+    margin: 10px;
+    height: 50px;
+    width: 150px;
+    padding-left: 10px;
+    padding-top: 10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+}
+.hoverinfo {padding: 4px; border-radius: 1px; background-color: #FFF; box-shadow: 1px 1px 5px #CCC; font-size: 12px; border: 1px solid #CCC; }
+
+div.slider {
+    width: 600px;
+    height: 20px;
+    align-content: center;
+}
+
+.magnitude_axis path, .magnitude_axis line {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.magnitude_axis text {
+  font: 10px helvetica;
+	fill: #fff;
+}
+
+.timeline_axis path, .timeline_axis line {
+    fill: none;
+    stroke: black;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.timeline_axis text {
+  font: 10px helvetica;
+	fill: black;
+}
+
+/* NICK'S CSS*/
+#map {
+	/* mostly a copy of bootstrap's .well
+	border: 1px solid #e3e3e3;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	cursor: pointer;*/
+}
+.background {
+	fill: none;
+	pointer-events: all;
+}
+#districts, #vdcs {
+	fill: #cde;
+	stroke: #fff;
+	/*fill: red;
+	stroke: red;*/
+	stroke-linejoin: round;
+	stroke-linecap: round;
+}
+#healthcenters {
+	fill: #f00;
+}
+#districts .active, #vdcs .active, .active {
+	fill: #89a;
+}
+.lighten {
+	fill: #cde;
+}
+.invisible {
+	display:none;
+}
+#cities {
+	stroke-width: 0;
+}
+.wordcounts {
+	fill: #345;
+	stroke: #fff;
+}
+
+pre.prettyprint {
+	border: 1px solid #ccc;
+	margin-bottom: 0;
+	padding: 9.5px;
+}
+div.tiptool  {
+	color: #222;
+	background: #fff;
+	padding: .5em;
+	text-shadow: #f5f5f5 0 1px 0;
+	border-radius: 2px;
+	box-shadow: 0px 0px 2px 0px #a6a6a6;
+	opacity: 0.9;
+	position: absolute;
+}
+div.tiptool .sep { color: #444; font-weight: 300; }
+
+.modal-body{
+	text-align: justify;
+}
+
+/*adding this to replicate nav class, enables exclusion of "sources" from scrollspy*/
+.nav-sources {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+	position: relative;
+	display: block;
+	padding: 15px 15px;
+}
+
+.top-buffer { margin-top:20px; }
+
+/*Leanne's CSS */
+
+/* Removed this since it conflicts with other page fonts and doesn't affect
+(as far as I can tell) Leanne's viz*/
+
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.y.axis text {
+  font: 10px helvetica;
+}
+
+.x.axis text {
+    display: none;
+}
+.bar {
+    fill: steelblue;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.area {
+    fill: White;
+    stroke-width: 0;
+}
+
+/*added "response" class to avoid conflicts with other maps*/
+path.response {
+    stroke: #3B3B3B;
+    stroke-width: 2;
+    fill: none;
+}
+
+/*Steve's CSS*/
+.carousel-indicators .active {
+  background-color: #fff;
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  background: #333333;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.carousel-caption h4,
+.carousel-caption p {
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.carousel-caption h4 {
+  margin: 0 0 5px;
+}
+
+.carousel-caption p {
+  margin-bottom: 0;
+}
+
+.carousel-indicators {
+  position: absolute;
+  top: 15px;
+  z-index: 5;
+  margin: 0;
+  list-style: none;
+  height: 20px;
+  width: auto;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 40%;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  font-weight: 100;
+  line-height: 30px;
+  color: #ffffff;
+  text-align: center;
+  background: #222222;
+  border: 3px solid #ffffff;
+  -webkit-border-radius: 23px;
+  -moz-border-radius: 23px;
+  border-radius: 23px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+
+
+.carousel-control.right {
+  right: 15px;
+  left: auto;
+}

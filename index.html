@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>2015 Nepal Earthquake</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Codeply">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+
+      <script src="js/jquery-latest.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/d3.v3.min.js"></script>
+      <script src="js/d3.layout.cloud.js"></script>
+      <script src="js/datamaps.world.min.js"></script>
+      <script src="js/topojson.v0.min.js"></script>
+      <script src="js/tooltip.js"></script>
+      <script src="js/d3.tip.v0.6.3.js"></script>
+      <script src="js/d3.legend.js"></script>
+      <script src="js/barchart.js"></script>
+      <!-- Additional scripts are loaded at the bottom -->
+
+  </head>
+  <body data-spy="scroll" data-target="#navbar-collapsible">
+    <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+        <div class="nav navbar-collapse collapse" id="navbar-collapsible">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="#section1">Home</a></li>
+                <li><a href="#section2">What Happened?</a></li>
+                <li><a href="#section3">Magnitude</a></li>
+                <li><a href="#section4">Impact</a></li>
+                <li><a href="#section5">Global Response</a></li>
+                <li><a href="#section6">Citizen Feedback</a></li>
+                <li>&nbsp;</li>
+            </ul>
+            <ul class="nav-sources navbar-right">
+                <li><a href="#" data-toggle="modal" data-target="#sourcesModal"><i>Sources and Methods</i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="container-fluid" id="section1">
+    <div class="v-center">
+        <h1 class="text-center">The 2015 Nepal Earthquake</h1>
+        <h2 class="text-center lato animate slideInDown">Stories, Impact, and Next Steps</h2>
+        <p class="text-center">
+            <br>
+        </p>
+    </div>
+    <a href="#section2">
+        <div class="scroll-down bounceInDown animated">
+            <i class="fa fa-sort-desc"></i>
+        </div>
+    </a>
+</section>
+
+<section class="container-fluid" id="section2">
+<div class="row">
+  <h1 class="text-center">An Earthquake Unfolding</h1>
+  <p class="text-center"> Read on below, and use the interactive map (add layers at top right) to understand more how the earthquake unfolded . </p>
+    <div class="col-sm-6">
+      <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+          <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+          <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+          <li data-target="#myCarousel" data-slide-to="4" class=""></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="active item">
+            <img style="height:500px;" src="http://www.mountainsoftravelphotos.com/Annapurna/Annapurna%20Sanctuary%203%20to%20Kathmandu/slides/608%20Kathmandu%20From%20Air.jpg" alt="">
+              <div class="carousel-caption">
+               <h4>Nepal's population</h4>
+               <p>Nepal has a population of 27.8m as of 2013. However, due to its mountainous terrain much of the population lives along its borders with India where the land is flatter. Notice the darker blue areas along the borders of the interative map to the right. The exception is Kathmandu with a population of over 1m living, or rather, perched in the Kathmandu valley at an elevation of 1400m.</p>
+              </div>
+          </div>
+
+          <div class="item">
+            <img style="height:500px;" src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2015/4/28/1430237243637/6e326590-ac3b-4927-b8f2-12667b30bd01-2060x1236.jpeg" alt="">
+              <div class="carousel-caption">
+               <h4>An epicenter close to the capital</h4>
+               <p>The epicenter of the Nepal earthquake occured only 80km NorthWest of Kathmandu, registering at 7.8 on the richter scale. This meant that, while the full force was not felt, the earthquake still shifted the entire city 3 meters south! Add the "Earthquake Magnitude" layer to the map on the right to see where the eartquake hit.</p>
+              </div>
+          </div>
+
+          <div class="item">
+            <img style="height:500px;" src="http://cdn.citylab.com/media/img/citylab/2015/04/n7/lead_large.jpg" alt="">
+              <div class="carousel-caption">
+               <h4>Towns flattened, buildings destroyed</h4>
+               <p>The result was the destruction of many towns and buildings across Nepal; particularly those close to the epicenter. 9,000 people were killed and 23,000 injured by the initial shock, with a further 200 killed as a result of aftershocks. The worst loss of life, though, was not felt in the capital. Add the # buildings damaged and # deaths layers to visualise the impact.</p>
+              </div>
+          </div>
+
+          <div class="item">
+            <img style="height:500px;" src="http://www.journalreporter.com/wp-content/uploads/2015/06/13930511000499_PhotoI.jpg" alt="">
+              <div class="carousel-caption">
+               <h4>The story of Sindhupalchowk </h4>
+               <p>The largest number of deaths occured in the Sindhupalchowk region of Nepal. This area, typically easily accessible, became treacherous to reach post-earthquake due to its steep mountains, narrow roads and the large number of landslides that occured. It took the first rescue vehicles more than 3 hours to arrive from Kathmandu.</p>
+              </div>
+          </div>
+
+          <div class="item">
+            <img style="height:500px;" src="images/landslides.png" alt="">
+              <div class="carousel-caption">
+               <h4>Locations of landslides</h4>
+               <p>Looking at the location of landslides subsequent to the earthquake it is clear to see that these occured in the regions North of Kathmandu, stretching into Sindhupalchowk.</p>
+              </div>
+          </div>
+        </div>
+
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+    </div>
+  <div class="col-sm-6">
+    <iframe width="100%" height="520" frameborder="0" src="https://stephentracyis.cartodb.com/viz/dd7d2ace-8d91-11e5-a20b-0e98b61680bf/embed_map"></iframe>
+  </div>
+</div>
+</section>
+
+
+<section class="container-fluid quote" id="cleanup">
+  <div class="row">
+    <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <h1 class="text-left">
+        I was in the fields when it happened. I came back to find the ceiling and the floor had become one.
+      </h1>
+      <i>Survivor, Latipur District</i> <!-- https://www.facebook.com/photo.php?fbid=752033258228495 -->
+    </div>
+  </div>
+</section>
+
+<section class="container-fluid" id="section3">
+    <h1 class="text-center">How powerful was the quake?</h1>
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1" id="magnitude_bar_id">
+        <p>Compared to other earthquakes in the pacific over the last hundred years,
+          Nepal's event was relatively weak. Hover over the dots and bars to
+          learn more and see where these stronger quakes occurred.<p>
+        <script>
+          drawbarchart("#magnitude_bar_id",'2015 Nepal Earthquake');
+        </script>
+      </div>
+        <div class="col-md-6" id="magnitude_id">
+        </div>
+    </div>
+</section>
+
+<section id="section4" style=" min-height:750px !important;">
+   <h1 class="text-center">Social Media Response</h1>
+   <div class="row">
+     <div class="col-md-8 col-md-offset-2">
+       <p>Despite an initial wave of support immediately after the diaster,
+         social media interest in the earthquake quickly dried up within a few
+         months.  The chart on the left shows how rapidly users stopped tweeting
+         certain keywords related to the event.  Use the choices on the right
+         to show/hide the curves for specific words, and use the word cloud on
+         the left to explore how other keywords associated with the quake changed
+         over time.
+         <p>
+         </div>
+    </div>
+
+   <div class="row">
+
+      <div class="col-md-5 col-md-offset-1" style="max-height: 700px;" >
+         <div class="panel panel-default slideInLeft animate">
+            <div class="panel-body" >
+               <p>
+                  <label for="nHeight"
+                     style="display: inline-block; width: 400px; text-align: right">
+                  Slide to change the month = 2015/<span id="nHeight-value">4</span>
+                  </label>
+                  <input type="range" min="4" max="10" id="nHeight">
+                  <timeline class="tagcloud" align="center">
+
+               </timeline>
+               <script src="js/timeline.js"></script>
+               </p>
+            </div>
+         </div>
+      </div>
+
+       <div class="col-md-6" style="max-height: 900px;">
+          <timeline_timeseries>
+            <div class="col-sm-6 col-md-6 col-md-offset-0" id="timeline_timeseries_id">
+                <script>
+                  drawtimeline('#timeline_timeseries_id');
+                  </script>
+            </div>
+          </timeline_timeseries>
+        </div>
+
+  </div>
+</section>
+
+<section class="container-fluid quote" id="family">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 lato text-left">
+      <h2>
+        "There is no other choice than to endure. No other choice than to somehow survive...
+      </h2>
+      <br>
+      <h2>
+        There is no other choice than to hope. No other choice than to cry and regret and no other choice than to sit and laugh."
+      </h2>
+      <i>Survivor, Kavre District</i> <!--https://www.facebook.com/photo.php?fbid=754203681344786 -->
+    </div>
+  </div>
+</section>
+
+<section class="container-fluid" id="section5">
+  <h1 class="col-md-offset-1">How the World Responded</h2>
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <p>
+          After the earthquake, governments, NGOs, and communities
+          provided quick support. While millions have been raised to date and
+          disbursed in several forms, roughly half the pledged
+          funds are still pending distribution. This is, in part, due to the
+          <a href="#section6">long rebuilding process that still remains ahead.</a>
+
+          </form>
+          <p>
+          </div>
+     </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-sm-offset-0 col-md-offset-0">
+            <response>
+            </response>
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid" id="section6">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 text-center">
+      <h1>What still needs to be done?</h1>
+    <p> Six months after the earthquake, how far has the relief effort come?<br>
+      Choose a question to see how Nepali citizens in the most affected regions
+      feel about the progress so far.
+    </p>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-md-offset-1">
+
+      <h3 class="text-center">Choose a question</h3>
+
+    <form>
+
+      <select name="questions" onchange="updateQuestion()">
+        <option value="_1_Are_your_main_problems_being_addressed_?" selected>Are your main problems being addressed?</option>
+        <option value="_3_Do_ you_have_the_information_you_need_to_get_relief_and_support? ">Do you have the information you need to get support?</option>
+        <option value="_4_Are_you_satisfied_with_what_NGOs_are_doing_for_you_after_the_earthquake? ">Are you satisfied with the work NGOs have done?</option>
+        <option value="_2_Are_you_satisfied_with_what_the_government_is_doing_for_you_after_the_earthquake_?">Are you satisfied with the work government has done?</option>
+        <option value="_5_Is_support_fair">Is support fair?</option>
+        <option value="_8_Overall_is_the_post-earthquake_relief_effort_making_progress? ">Overall, is the relief effort making progress?</option>
+      </select>
+
+    </form>
+
+    <div class="row top-buffer" style="height:fixed">
+      <div id="question-desc" class="col-md-12 col-md-offset-0">
+      <p>
+        In general, most citizens feel their needs are not being met,
+        especially in the most-highly affected districts.
+        Only residents of Gorkha district responded towards the
+        positive side of the scale.
+      </p>
+      </div>
+  </div>
+
+    <div class="row top-buffer">
+      <div class="col-md-12 col-md-offset-0">
+        <img id="question-image" class="img-responsive" src="https://www.globalgiving.org/pfil/20336/pict_original.jpg"/>
+      </div>
+  </div>
+      </div>
+  <feedback>
+    <div class="col-sm-6 col-md-6 col-md-offset-0 col-lg-6">
+      <h3 id="question-title" class="text-center">Are your main problems being addressed?</h3>
+    </div>
+  <div class="col-sm-6 col-md-6 col-md-offset-0 col-lg-6 text-center" id="map">
+    </div>
+  </feedback>
+</div>
+</section>
+
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-3 column">
+              <h4>About this Viz</h4>
+              <ul class="nav">
+                  <li><a href="#" data-toggle="modal" data-target="#goalsModal">Design Goals</a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#toolsModal">Tools Used</a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#testingModal">User Testing</a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#sourcesModal">Data Sources</a></li>
+              </ul>
+          </div>
+            <div class="col-xs-6 col-sm-6 col-md-3 column">
+                <h4>Our Team</h4>
+                <ul class="nav">
+                    <li><a href="#" data-toggle="modal" data-target="#leanneModal">Leanne</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#nickModal">Nick</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#mandeepakModal">Mandeepak</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#stephenModal">Stephen</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3 column">
+                <h4>Our Program</h4>
+                <ul class="nav">
+                    <li><a href="https://datascience.berkeley.edu/">DataScience@Berkeley</a></li>
+                    <li><a href="http://www.ischool.berkeley.edu/">School of Information</a></li>
+                    <li><a href="http://www.berkeley.edu/">UC Berkeley</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--/row-->
+        <p class="text-right">©2015</p>
+    </div>
+</footer>
+
+<div class="scroll-up">
+    <a href="#"><i class="fa fa-angle-up"></i></a>
+</div>
+
+<!-- MODAL WINDOWS -->
+
+<!-- SOURCES AND METHODS -->
+<div id="sourcesModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="sourcesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- MODAL HEADER -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h2 class="text-center"><br>Sources and Methods</h2>
+            </div>
+
+            <!-- MODAL BODY -->
+            <div class="modal-body row">
+              <div class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+              <ul>
+                <li>
+                  Raw Nepal Mapping data is avaiable via the <a href="https://data.hdx.rwlabs.org/group/nepal-earthquake">Humanitarian Data Exchange</a>
+                </li>
+                <li>
+                  Citizen Feedback data is available courtesy of <a href="http://www.accountabilitylab.org/">Accountability Lab</a>
+                </li>
+                <li>
+                  Photos available courtesy of <a href="http://www.globalgiving.org">GlobalGiving</a> ©2015 GlobalGiving/Gavin Gough
+                </li>
+                <li>
+                  Additional quotes and stories available via <a href="http://www.storiesofnepal.com/">Stories of Nepal</a>
+                </li>
+              </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Leanne's Bio -->
+<div id="leanneModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="leanneModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <!-- MODAL HEADER -->
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h2 class="text-center"><br>Leanne Bradley</h2>
+          </div>
+
+          <!-- MODAL BODY -->
+          <div class="modal-body row">
+            <div class="col-md-3 col-md-offset-1 col-xs-3">
+                <img class="img-responsive img-circle" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/053/3dc/3580bb6.jpg"/>
+          </div>
+          <div class="col-md-6 col-md-offset-1 col-xs-9">
+                Leanne works at LinkedIn where she builds executive reports, does tons of data detective work, sings with the acappella crew and eats far too much yummy food.  She lives in Sunnyvale with her brand new husband Ehsan.
+          </div>
+          </div>
+          <div class="modal-footer text-center">
+            <div class="row text-center">
+              <a href="https://www.linkedin.com/in/leannebradley1"><i class="fa fa-linkedin fa-3x">&nbsp;</i></a>
+              <a href="https://github.com/leannebradley"><i class="fa fa-github fa-3x">&nbsp;</i></a>
+              <a href="https://twitter.com/dleanneb"><i class="fa fa-twitter fa-3x">&nbsp;</i></a>
+              <a href="#"><i class="fa fa-facebook fa-3x">&nbsp;</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Nick's Bio -->
+<div id="nickModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="nickModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- MODAL HEADER -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h2 class="text-center"><br>Nick Hamlin</h2>
+            </div>
+
+            <!-- MODAL BODY -->
+            <div class="modal-body row">
+              <div class="col-md-3 col-md-offset-1 col-xs-3">
+                  <img class="img-responsive img-circle" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/3/005/06a/339/375b692.jpg"/>
+            </div>
+            <div class="col-md-6 col-md-offset-1 col-xs-9">
+                  During the day Nick does data at <a href="http://www.globalgiving.org">GlobalGiving</a>,
+                    but by night he's a folk music nerd/worm farmer living in Washington DC.
+            </div>
+            </div>
+            <div class="modal-footer text-center">
+              <div class="row text-center">
+                  <a href="https://www.linkedin.com/in/nickhamlin"><i class="fa fa-linkedin fa-3x">&nbsp;</i></a>
+                  <a href="https://github.com/nickhamlin"><i class="fa fa-github fa-3x">&nbsp;</i></a>
+                  <a href="https://twitter.com/nicholashamlin"><i class="fa fa-twitter fa-3x">&nbsp;</i></a>
+                  <a href="https://www.facebook.com/nick.hamlin"><i class="fa fa-facebook fa-3x">&nbsp;</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mandeepak's Bio -->
+<div id="mandeepakModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mandeepakModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <!-- MODAL HEADER -->
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h2 class="text-center"><br>Mandeepak Singh</h2>
+          </div>
+
+          <!-- MODAL BODY -->
+          <div class="modal-body row">
+            <div class="col-md-3 col-md-offset-1 col-xs-3">
+                <img class="img-responsive img-circle" src="https://lh4.googleusercontent.com/-cpT4-q7rDhc/AAAAAAAAAAI/AAAAAAAAFAc/vMZ0s4BUYQ0/photo.jpg"/>
+          </div>
+          <div class="col-md-6 col-md-offset-1 col-xs-9">
+                Mandeepak works at Amazon, and, like Steve, isn't big on writing
+                autobiographies.  In his spare time, he is an International Man of
+                Mystery.
+          </div>
+          </div>
+          <div class="modal-footer text-center">
+            <div class="row text-center">
+              <a href="https://www.linkedin.com/in/mandeepak"><i class="fa fa-linkedin fa-3x">&nbsp;</i></a>
+              <a href="https://github.com/bmandeepak"><i class="fa fa-github fa-3x">&nbsp;</i></a>
+              <a href="#"><i class="fa fa-twitter fa-3x">&nbsp;</i></a>
+              <a href="#"><i class="fa fa-facebook fa-3x">&nbsp;</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Steve's Bio -->
+<div id="stephenModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="stephenModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <!-- MODAL HEADER -->
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h2 class="text-center"><br>Stephen Tracy</h2>
+          </div>
+
+          <!-- MODAL BODY -->
+          <div class="modal-body row">
+            <div class="col-md-3 col-md-offset-1 col-xs-3">
+                <img class="img-responsive img-circle" src="https://media.licdn.com/media/p/3/005/020/3f3/13718d0.jpg"/>
+          </div>
+            <div class="col-md-6 col-md-offset-1 col-xs-9">
+                Stephen Tracy finds writing third-person bios odd. So, I live in New York, love data, run a startup making candles, and drink enough coffee for all of us!
+
+          </div>
+          </div>
+          <div class="modal-footer text-center">
+            <div class="row text-center">
+              <a href="https://www.linkedin.com/in/stephentracy1"><i class="fa fa-linkedin fa-3x">&nbsp;</i></a>
+              <a href="https://github.com/tracsj"><i class="fa fa-github fa-3x">&nbsp;</i></a>
+              <a href="https://twitter.com/stephentracy"><i class="fa fa-twitter fa-3x">&nbsp;</i></a>
+              <a href="#"><i class="fa fa-facebook fa-3x">&nbsp;</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Design Goals -->
+<div id="goalsModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="goalsModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <!-- MODAL HEADER -->
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h2 class="text-center"><br>Design Philosophy and Goals</h2>
+          </div>
+
+          <!-- MODAL BODY -->
+          <div class="modal-body row">
+            <div class="col-md-10 col-md-offset-1">
+              <p>
+              Our goal for this project is to create a "data journalism" piece
+              to inform, engage, and educate users about the 2015 Nepal Earthquake
+              and the associated (and still ongoing) rebuilding process.  Our intended
+              audience isn't necessarily data scientists or international development
+              experts, instead we aim to reach the members of the general public
+              who may be broadly familiar with the disaster in Nepal but unaware
+              of most of the details.</p>
+
+              <p>
+                For this reason, we've chosen a mix of interactive visualizations
+                of quantitative data and first-person narrative accounts and photos.
+                This approach enables us to depict broad trends, but without sacrificing
+                the personal stories from the affected communities. </p>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Tools-->
+<div id="toolsModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="toolsModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <!-- MODAL HEADER -->
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h2 class="text-center"><br>Tools Used</h2>
+          </div>
+
+          <!-- MODAL BODY -->
+          <div class="modal-body row">
+            <div class="col-md-10 col-md-offset-1">
+              <ul>
+                <li>Most visualizations on this page were created with
+                  <a href="http://d3js.org/">D3</a>. We chose D3 as our primary visualization tool
+                  because of its powerfand versatility, as well as the opportunity it presented
+                  to learn a new javascript library.</li>
+
+                <li>The interactive map describing providing a summary of the Earthquake is powered by <a href="https://cartodb.com/">CartoDB</a>, which is great
+                for maps that might be too onerous to set up in D3</li>
+                <li>We use the Twitter <a href="http://getbootstrap.com/">Bootstrap</a> framework for the rest of the site structure since
+                  it's well-documented and makes building responsive websites simple. Page layout
+                is based on free/open source <a href="http://www.bootstrapzero.com/bootstrap-template/just-one-page">Just One Page</a> Bootstrap theme</li>
+                <li>All code for this project is stored and versioned in <a href="https://github.com/">GitHub</a></li>
+                <li>This page is hosted cheaply and easily via <a href="http://aws.amazon.com/">Amazon Web Services</a></li>
+                </ul
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- User testing -->
+<div id="testingModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="testingModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <!-- MODAL HEADER -->
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h2 class="text-center"><br>User Testing</h2>
+          </div>
+
+          <!-- MODAL BODY -->
+          <div class="modal-body row">
+            <div class="col-md-10 col-md-offset-1">
+              To ensure we're offering the most effective and engaging visualizations
+              we can, we reached out to friends and family to offer their feedback
+              via a structured user testing framework.  Participants were given a list
+              of tasks to complete on the page and asked to articulate their thought
+              process outloud.  For example, we asked users questions like "Where
+              was the epicenter of the earthquake and what was its magnitude on
+              the Richter scale?" and "Why were deaths so severe in the Sindhupalchok
+              region?".  After working through the examples, users were also invited
+              to provide open-ended feedback.  Based on the responses from our testers,
+              we focused on clarifying the narrative, eliminating unnecessary
+              text and non-data ink, and making the visualizations easier to use.
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- Other scripts loaded here-->
+  <script src="js/maps.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/response.js"></script>
+
+
+  </body>
+
+</html>
