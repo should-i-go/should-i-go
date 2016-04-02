@@ -40,7 +40,7 @@
         <div class="nav navbar-collapse collapse" id="navbar-collapsible">
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="#section1">Home</a></li>
-                <li><a href="#section2">Problem</a></li>
+                <li><a href="#section2">Overview</a></li>
                 <li><a href="#section3">Solution</a></li>
                 <li><a href="#section4">Technology</a></li>
                 <li><a href="#section5">Data Science</a></li>
@@ -88,8 +88,8 @@
           <div class="active item">
             <img style="height:500px;" src="images/chicagotraffic_home.png" alt="">
               <div class="carousel-caption">
-               <h4>Problem & Hypothesis</h4>
-               <p>You and your friend agree to meet for drinks tonight at a new bar in the Lincoln Park neighborhood of Chicago.  One hour and a $50 Uber bill later, you’re still not at the bar because traffic is gridlocked due to a large conference in town.  If only you’d known!  Our capstone project can help.
+               <h4>Problem Statement & Hypothesis</h4>
+               <p align="justify">You and your friend agree to meet for drinks tonight at a new bar in the Lincoln Park neighborhood of Chicago.  One hour and a $50 Uber bill later, you’re still not at the bar because traffic is gridlocked due to a large conference in town.  If only you’d known!  Our capstone project can help.
                    e’ll combine data about upcoming “black swan” (rare) events with historical information about traffic patterns under similar events to recommend which neighborhoods to avoid and which to enjoy.
 
                </p>
@@ -100,7 +100,7 @@
             <img style="height:500px;" src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2015/4/28/1430237243637/6e326590-ac3b-4927-b8f2-12667b30bd01-2060x1236.jpeg" alt="">
               <div class="carousel-caption">
                <h4>Persona & Use Case</h4>
-                  <p>Our targeted customer are urban dwellers aged 20-40 in Chicago.  These are people who travel to restaurants and bars to meet up with friends and colleagues, and would use traffic predictions to decide which neighborhoods to avoid.
+                  <p align="justify">Our targeted customer are urban dwellers aged 20-40 in Chicago.  These are people who travel to restaurants and bars to meet up with friends and colleagues, and would use traffic predictions to decide which neighborhoods to avoid.
                   </p>
               </div>
           </div>
@@ -109,7 +109,7 @@
             <img style="height:500px;" src="http://cdn.citylab.com/media/img/citylab/2015/04/n7/lead_large.jpg" alt="">
               <div class="carousel-caption">
                <h4>Value Proposition</h4>
-               <p>There are a number of travel recommendation engines on the market but, to our knowledge, their forecasts are based on real-time traffic and best estimates under average conditions.
+               <p align="justify">There are a number of travel recommendation engines on the market but, to our knowledge, their forecasts are based on real-time traffic and best estimates under average conditions.
                    In financial analysis, teams add perspective to financial forecasts by projecting funds’ behavior under rare, “black swan” events.  We can do something similar, something new, in the travel space.  This recommendation engine will illustrate what areas of the city will be clear, congested or grid locked (green, yellow or red) when special events come to town.
 
                </p>
@@ -131,76 +131,135 @@
 <section class="container-fluid quote" id="cleanup">
   <div class="row">
     <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
-      <h1 class="text-left">
-        I was in the fields when it happened. I came back to find the ceiling and the floor had become one.
-      </h1>
-      <i>Survivor, Latipur District</i> <!-- https://www.facebook.com/photo.php?fbid=752033258228495 -->
+      <h2 class="text-left">
+        How are we different from google maps, waze etc.?
+      </h2>
+      <i>Some Content</i> <!-- https://www.facebook.com/photo.php?fbid=752033258228495 -->
     </div>
   </div>
 </section>
 
-<section class="container-fluid" id="section3">
-    <h1 class="text-center">How powerful was the quake?</h1>
-    <div class="row">
-      <div class="col-md-5 col-md-offset-1" id="magnitude_bar_id">
-        <p>Compared to other earthquakes in the pacific over the last hundred years,
-          Nepal's event was relatively weak. Hover over the dots and bars to
-          learn more and see where these stronger quakes occurred.<p>
-        <script>
-          drawbarchart("#magnitude_bar_id",'2015 Nepal Earthquake');
-        </script>
-      </div>
-        <div class="col-md-6" id="magnitude_id">
-        </div>
-    </div>
-</section>
-
-<section id="section4" style=" min-height:750px !important;">
-   <h1 class="text-center">Social Media Response</h1>
-   <div class="row">
-     <div class="col-md-8 col-md-offset-2">
-       <p>Despite an initial wave of support immediately after the diaster,
-         social media interest in the earthquake quickly dried up within a few
-         months.  The chart on the left shows how rapidly users stopped tweeting
-         certain keywords related to the event.  Use the choices on the right
-         to show/hide the curves for specific words, and use the word cloud on
-         the left to explore how other keywords associated with the quake changed
-         over time.
-         <p>
-         </div>
-    </div>
-
-   <div class="row">
-
-      <div class="col-md-5 col-md-offset-1" style="max-height: 700px;" >
-         <div class="panel panel-default slideInLeft animate">
-            <div class="panel-body" >
-               <p>
-                  <label for="nHeight"
-                     style="display: inline-block; width: 400px; text-align: right">
-                  Slide to change the month = 2015/<span id="nHeight-value">4</span>
-                  </label>
-                  <input type="range" min="4" max="10" id="nHeight">
-                  <timeline class="tagcloud" align="center">
-
-               </timeline>
-               <script src="js/timeline.js"></script>
-               </p>
+    <section class="container-fluid" id="section3">
+        <div class="row">
+            <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
+                <h2 class="text-left">
+                    Average traffic speed through the week ?
+                </h2>
+                <img style="height:500px;" src="http://cdn.citylab.com/media/img/citylab/2015/04/n7/lead_large.jpg" alt="">
             </div>
-         </div>
-      </div>
-
-       <div class="col-md-6" style="max-height: 900px;">
-          <timeline_timeseries>
-            <div class="col-sm-6 col-md-6 col-md-offset-0" id="timeline_timeseries_id">
-                <script>
-                  drawtimeline('#timeline_timeseries_id');
-                  </script>
+        <div class="row">
+            <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
+                <h2 class="text-left">
+                    The Model ?
+                </h2>
+                <p align="justify">
+                We generated two models.  The first model considered each segment’s relationship with special events individually, and the second model defined special events’ impact based on the distance between a segment and the event.
+                While both models are good fits, the first model gives a more precise view of the magnitude of special events on certain streets.  Some of this precision is lost when we try to generalize to a distance-driven model.
+                </p>
+                <br>
+                <br>
+                </div>
+                <div class="container" align="center">
+                    <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Definition</th>
+                            <th>Adjusted R<sup>2</sup></th>
+                            <th>Range of Impact of Special Events on Daily Average Speed</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>SPEED ~ SegmentID + WEEKDAY + HasGame:SegmentID
+                            </td>
+                            <td>0.9631
+                            </td>
+                            <td>6 mph</td>
+                        </tr>
+                        <tr>
+                            <td>SPEED ~ SegmentID + WEEKDAY + HasGame:EventDistance
+                            </td>
+                            <td>0.9622
+                            </td>
+                            <td>0.5 mph
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
             </div>
-          </timeline_timeseries>
         </div>
+    </section>
 
-  </div>
+
+    <section class="container-fluid" id="section4">
+        <div class="row">
+            <h1 class="text-center">Detecting Black Swans</h1>
+            <div class="col-sm-6">
+                <div id="myCarousel3" class="carousel slide">
+
+                    <h3>No Game</h3>
+                    <p>On days with no games, the two models were virtually identical, with a correlation coefficient of 0.9999139.
+                    </p>
+
+                    <div class="carousel-inner">
+                        <div class="active item">
+                            <img style="height:500px;" src="images/NoGame.png" alt="">
+                        </div>
+
+                </div>
+            </div>
+                </div>
+            <div class="col-sm-6">
+                <div id="myCarousel4" class="carousel slide">
+
+                    <h3>Game</h3>
+                    <p>On days with with games, the two models are still very similar, with a correlation coefficient of 0.9945453, but some loss of fidelity begins to appear.
+                    </p>
+
+                    <div class="carousel-inner">
+                        <div class="active item">
+                            <img style="height:500px;" src="images/WithGame1.png" alt="">
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+            </div>
+        <br>
+        <br>
+        <div class="row">
+            <h2 class="text-center">Analysis of Model with Game</h2>
+            <div class="col-sm-6 col-sm-offset-3">
+                <div id="myCarousel5" class="carousel slide">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel5" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel5" data-slide-to="1" class=""></li>
+                        <li data-target="#myCarousel5" data-slide-to="2" class=""></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="active item">
+                            <img style="height:500px;" src="images/WithGame2.png" alt="">
+                        </div>
+
+
+                        <div class="item">
+                            <img style="height:500px;" src="images/WithGame3.png" alt="">
+                        </div>
+
+
+                        <div class="item">
+                            <img style="height:500px;" src="images/WithGame4.png" alt="">
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel5" data-slide="prev">&lsaquo;</a>
+                    <a class="right carousel-control" href="#myCarousel5" data-slide="next">&rsaquo;</a>
+
+                </div>
+                </div>
 </section>
 
 <section class="container-fluid quote" id="family">
@@ -303,9 +362,9 @@
     <div class="container">
         <div class="row">
           <div class="col-xs-6 col-sm-6 col-md-3 column">
-              <h4>About this Viz</h4>
+              <h4>About the Project</h4>
               <ul class="nav">
-                  <li><a href="#" data-toggle="modal" data-target="#goalsModal">Design Goals</a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#goalsModal">Goals</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#toolsModal">Tools Used</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#testingModal">User Testing</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#sourcesModal">Data Sources</a></li>
@@ -315,9 +374,8 @@
                 <h4>Our Team</h4>
                 <ul class="nav">
                     <li><a href="#" data-toggle="modal" data-target="#leanneModal">Leanne</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#nickModal">Nick</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#mandeepakModal">Mandeepak</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#stephenModal">Stephen</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#johnModal">John</a></li>
                 </ul>
             </div>
 
@@ -331,7 +389,7 @@
             </div>
         </div>
         <!--/row-->
-        <p class="text-right">©2015</p>
+        <p class="text-right">©2016</p>
     </div>
 </footer>
 
@@ -356,16 +414,7 @@
               <div class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
               <ul>
                 <li>
-                  Raw Nepal Mapping data is avaiable via the <a href="https://data.hdx.rwlabs.org/group/nepal-earthquake">Humanitarian Data Exchange</a>
-                </li>
-                <li>
-                  Citizen Feedback data is available courtesy of <a href="http://www.accountabilitylab.org/">Accountability Lab</a>
-                </li>
-                <li>
-                  Photos available courtesy of <a href="http://www.globalgiving.org">GlobalGiving</a> ©2015 GlobalGiving/Gavin Gough
-                </li>
-                <li>
-                  Additional quotes and stories available via <a href="http://www.storiesofnepal.com/">Stories of Nepal</a>
+                  Raw Chicago Traffic Congestion by Region & Segment is available  via the <a href="https://data.cityofchicago.org/Transportation/Chicago-Traffic-Tracker-Congestion-Estimates-by-Re/t2qc-9pjd">City of Chicago Data Portal</a>
                 </li>
               </ul>
             </div>
@@ -406,38 +455,6 @@
   </div>
 </div>
 
-<!-- Nick's Bio -->
-<div id="nickModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="nickModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <!-- MODAL HEADER -->
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h2 class="text-center"><br>Nick Hamlin</h2>
-            </div>
-
-            <!-- MODAL BODY -->
-            <div class="modal-body row">
-              <div class="col-md-3 col-md-offset-1 col-xs-3">
-                  <img class="img-responsive img-circle" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/3/005/06a/339/375b692.jpg"/>
-            </div>
-            <div class="col-md-6 col-md-offset-1 col-xs-9">
-                  During the day Nick does data at <a href="http://www.globalgiving.org">GlobalGiving</a>,
-                    but by night he's a folk music nerd/worm farmer living in Washington DC.
-            </div>
-            </div>
-            <div class="modal-footer text-center">
-              <div class="row text-center">
-                  <a href="https://www.linkedin.com/in/nickhamlin"><i class="fa fa-linkedin fa-3x">&nbsp;</i></a>
-                  <a href="https://github.com/nickhamlin"><i class="fa fa-github fa-3x">&nbsp;</i></a>
-                  <a href="https://twitter.com/nicholashamlin"><i class="fa fa-twitter fa-3x">&nbsp;</i></a>
-                  <a href="https://www.facebook.com/nick.hamlin"><i class="fa fa-facebook fa-3x">&nbsp;</i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-</div>
 
 <!-- Mandeepak's Bio -->
 <div id="mandeepakModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mandeepakModalLabel" aria-hidden="true">
@@ -455,15 +472,13 @@
                 <img class="img-responsive img-circle" src="https://lh4.googleusercontent.com/-cpT4-q7rDhc/AAAAAAAAAAI/AAAAAAAAFAc/vMZ0s4BUYQ0/photo.jpg"/>
           </div>
           <div class="col-md-6 col-md-offset-1 col-xs-9">
-                Mandeepak works at Amazon, and, like Steve, isn't big on writing
-                autobiographies.  In his spare time, he is an International Man of
-                Mystery.
+
           </div>
           </div>
           <div class="modal-footer text-center">
             <div class="row text-center">
               <a href="https://www.linkedin.com/in/mandeepak"><i class="fa fa-linkedin fa-3x">&nbsp;</i></a>
-              <a href="https://github.com/bmandeepak"><i class="fa fa-github fa-3x">&nbsp;</i></a>
+              <a href="https://github.com/mandeepak"><i class="fa fa-github fa-3x">&nbsp;</i></a>
               <a href="#"><i class="fa fa-twitter fa-3x">&nbsp;</i></a>
               <a href="#"><i class="fa fa-facebook fa-3x">&nbsp;</i></a>
             </div>
@@ -473,14 +488,14 @@
   </div>
 </div>
 
-<!-- Steve's Bio -->
-<div id="stephenModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="stephenModalLabel" aria-hidden="true">
+<!-- John's Bio -->
+<div id="johnModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="johnModalLabel" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
           <!-- MODAL HEADER -->
           <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h2 class="text-center"><br>Stephen Tracy</h2>
+              <h2 class="text-center"><br>John Bocharov</h2>
           </div>
 
           <!-- MODAL BODY -->
@@ -489,15 +504,15 @@
                 <img class="img-responsive img-circle" src="https://media.licdn.com/media/p/3/005/020/3f3/13718d0.jpg"/>
           </div>
             <div class="col-md-6 col-md-offset-1 col-xs-9">
-                Stephen Tracy finds writing third-person bios odd. So, I live in New York, love data, run a startup making candles, and drink enough coffee for all of us!
+                Content about John
 
           </div>
           </div>
           <div class="modal-footer text-center">
             <div class="row text-center">
-              <a href="https://www.linkedin.com/in/stephentracy1"><i class="fa fa-linkedin fa-3x">&nbsp;</i></a>
-              <a href="https://github.com/tracsj"><i class="fa fa-github fa-3x">&nbsp;</i></a>
-              <a href="https://twitter.com/stephentracy"><i class="fa fa-twitter fa-3x">&nbsp;</i></a>
+              <a href="https://www.linkedin.com/in/jbocharov"><i class="fa fa-linkedin fa-3x">&nbsp;</i></a>
+              <a href="https://github.com/jbocharov"><i class="fa fa-github fa-3x">&nbsp;</i></a>
+              <a href="https://twitter.com/jbocharov"><i class="fa fa-twitter fa-3x">&nbsp;</i></a>
               <a href="#"><i class="fa fa-facebook fa-3x">&nbsp;</i></a>
             </div>
           </div>
@@ -519,20 +534,8 @@
           <!-- MODAL BODY -->
           <div class="modal-body row">
             <div class="col-md-10 col-md-offset-1">
-              <p>
-              Our goal for this project is to create a "data journalism" piece
-              to inform, engage, and educate users about the 2015 Nepal Earthquake
-              and the associated (and still ongoing) rebuilding process.  Our intended
-              audience isn't necessarily data scientists or international development
-              experts, instead we aim to reach the members of the general public
-              who may be broadly familiar with the disaster in Nepal but unaware
-              of most of the details.</p>
+              </p>
 
-              <p>
-                For this reason, we've chosen a mix of interactive visualizations
-                of quantitative data and first-person narrative accounts and photos.
-                This approach enables us to depict broad trends, but without sacrificing
-                the personal stories from the affected communities. </p>
               </div>
           </div>
         </div>
@@ -554,19 +557,18 @@
           <div class="modal-body row">
             <div class="col-md-10 col-md-offset-1">
               <ul>
-                <li>Most visualizations on this page were created with
-                  <a href="http://d3js.org/">D3</a>. We chose D3 as our primary visualization tool
-                  because of its powerfand versatility, as well as the opportunity it presented
-                  to learn a new javascript library.</li>
+                <li>Most of the data Analysis was done with
+                  <a href="http://pandas.pydata.org/">Pandas</a> and <a href="https://www.r-project.org/">R</a></li>
 
-                <li>The interactive map describing providing a summary of the Earthquake is powered by <a href="https://cartodb.com/">CartoDB</a>, which is great
-                for maps that might be too onerous to set up in D3</li>
+                <li>The interactive maps are powered by <a href="https://cartodb.com/">CartoDB</a> and <a href="http://leafletjs.com/">
+                    Leaflet
+                </a></li>
                 <li>We use the Twitter <a href="http://getbootstrap.com/">Bootstrap</a> framework for the rest of the site structure since
                   it's well-documented and makes building responsive websites simple. Page layout
                 is based on free/open source <a href="http://www.bootstrapzero.com/bootstrap-template/just-one-page">Just One Page</a> Bootstrap theme</li>
                 <li>All code for this project is stored and versioned in <a href="https://github.com/">GitHub</a></li>
-                <li>This page is hosted cheaply and easily via <a href="http://aws.amazon.com/">Amazon Web Services</a></li>
-                </ul
+
+                </ul>
               </div>
           </div>
         </div>
@@ -587,17 +589,7 @@
           <!-- MODAL BODY -->
           <div class="modal-body row">
             <div class="col-md-10 col-md-offset-1">
-              To ensure we're offering the most effective and engaging visualizations
-              we can, we reached out to friends and family to offer their feedback
-              via a structured user testing framework.  Participants were given a list
-              of tasks to complete on the page and asked to articulate their thought
-              process outloud.  For example, we asked users questions like "Where
-              was the epicenter of the earthquake and what was its magnitude on
-              the Richter scale?" and "Why were deaths so severe in the Sindhupalchok
-              region?".  After working through the examples, users were also invited
-              to provide open-ended feedback.  Based on the responses from our testers,
-              we focused on clarifying the narrative, eliminating unnecessary
-              text and non-data ink, and making the visualizations easier to use.
+                TODO
               </div>
           </div>
         </div>
