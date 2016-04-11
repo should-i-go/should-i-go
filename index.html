@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    
 
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/animate.css" />
@@ -22,6 +24,8 @@
       <script src="js/d3.tip.v0.6.3.js"></script>
       <script src="js/d3.legend.js"></script>
       <script src="js/barchart.js"></script>
+      <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+      <script src="js/leaflet-heat.js"></script>
       <!-- Additional scripts are loaded at the bottom -->
 
   </head>
@@ -46,6 +50,7 @@
                 <li><a href="#section5">Technology</a></li>
                 <li><a href="#section6">Data Science</a></li>
                 <li><a href="#section7">Future</a></li>
+                <li><a href="#section-demo">Demo</a></li>
                 <li>&nbsp;</li>
             </ul>
             <!--
@@ -374,6 +379,53 @@
     </div>
   </feedback>
 </div>
+</section>
+
+<section class="container-fluid" id="section-demo">
+    <div class="v-center">
+        <div id="map"></div>
+        <script src="data/chicago_data.js"></script>
+        <script>
+
+        $("#map").height($(window).height()).width($(window).width());
+
+        var map = L.map('map').setView([41.8369, -87.6847], 12);
+
+        var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        //addressPoints = segments.map(function (p) { return [p[0], p[1]]; });
+        //console.log(addressPoints);
+
+        var segments10x = [ ];
+
+        for (var i = 0 ; i < 10 ; i++) {
+            for (var j = 0 ; j < segments.length; j++) {
+                segments10x.push(segments[j])
+            }
+        }
+
+        var heat = L.heatLayer(segments10x).addTo(map),
+            draw = false;
+
+        /*map.on({
+            movestart: function () { draw = false; },
+            moveend:   function () { draw = true; },
+            mousemove: function (e) {
+                if (draw) {
+                    heat.addLatLng(e.latlng);
+                }
+            }
+        })*/
+
+        </script>
+    </div>
+    <a href="#section2">
+        <div class="scroll-down bounceInDown animated">
+            <i class="fa fa-sort-desc"></i>
+        </div>
+    </a>
 </section>
 
 
