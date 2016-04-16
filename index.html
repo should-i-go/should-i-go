@@ -48,8 +48,7 @@
                 <li><a href="#section3">Model</a></li>
                 <li><a href="#section4">Black Swans</a></li>
                 <li><a href="#section5">Technology</a></li>
-                <li><a href="#section6">Data Science</a></li>
-                <li><a href="#section7">Future</a></li>
+                <li><a href="#section6">Future</a></li>
                 <li><a href="#section-demo">Demo</a></li>
                 <li>&nbsp;</li>
             </ul>
@@ -336,127 +335,128 @@
 
                 <div class="carousel-inner">
 
-                    <div class="active item" align="center">
+                    <div align="center">
                         <img style="height:500px;" src="images/Should%20I%20Go%20Architecture.png" alt="">
-                    </div>
-                    <div class="item" align="center">
-                        <img style="height:500px;" src="images/Should%20I%20Go%20Data%20Pipeline.png" alt="">
-                    </div>
 
+                    <div class="item" align="center" class="active item" >
+                        <img style="height:500px;" src="images/Should%20I%20Go%20Data%20Pipeline.png" alt="">
+
+                    </div>
+                </div>
 
                 </div>
                 <a class="left carousel-control" href="#myCarousel6" data-slide="prev">&lsaquo;</a>
                 <a class="right carousel-control" href="#myCarousel6" data-slide="next">&rsaquo;</a>
         </div>
-
+    </div>
     </div>
 </section>
 
-<section class="container-fluid" id="section6">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 text-center">
-      <h1>What still needs to be done?</h1>
-    <p> Six months after the earthquake, how far has the relief effort come?<br>
-      Choose a question to see how Nepali citizens in the most affected regions
-      feel about the progress so far.
-    </p>
-  </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-4 col-md-4 col-md-offset-1">
 
-      <h3 class="text-center">Choose a question</h3>
+    <section class="container-fluid" id="section6">
+        <h1 class="text-center">
+            Future
+        </h1>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div id="myCarousel7" class="carousel slide">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel7" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel7" data-slide-to="1" class=""></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="active item">
+                            <img style="height:500px;" src="https://www.explainxkcd.com/wiki/images/a/a0/traffic_lights.gif" align="middle">
+                            <div class="carousel-caption">
+                                <h4>Product & Technical Updates</h4>
+                                <p align="justify">
+                                    Expand across multiple cities and include more events
+                                    <br>
+                                    Event Notification to subscribers on the common route
+                                    <br>
+                                    Explore RNN Models for improving the model
+                                    <br>
+                                    Better methods for outlier detection
+                                    <br>
+                                    Move to a 3 tier architecture
 
-    <form>
+                                </p>
+                            </div>
+                        </div>
 
-      <select name="questions" onchange="updateQuestion()">
-        <option value="_1_Are_your_main_problems_being_addressed_?" selected>Are your main problems being addressed?</option>
-        <option value="_3_Do_ you_have_the_information_you_need_to_get_relief_and_support? ">Do you have the information you need to get support?</option>
-        <option value="_4_Are_you_satisfied_with_what_NGOs_are_doing_for_you_after_the_earthquake? ">Are you satisfied with the work NGOs have done?</option>
-        <option value="_2_Are_you_satisfied_with_what_the_government_is_doing_for_you_after_the_earthquake_?">Are you satisfied with the work government has done?</option>
-        <option value="_5_Is_support_fair">Is support fair?</option>
-        <option value="_8_Overall_is_the_post-earthquake_relief_effort_making_progress? ">Overall, is the relief effort making progress?</option>
-      </select>
+                        <div class="item">
+                            <img style="height:500px;" src="images/Should%20I%20Go%20Architecture.png" alt="">
+                        </div>
 
-    </form>
+                    </div>
 
-    <div class="row top-buffer" style="height:fixed">
-      <div id="question-desc" class="col-md-12 col-md-offset-0">
-      <p>
-        In general, most citizens feel their needs are not being met,
-        especially in the most-highly affected districts.
-        Only residents of Gorkha district responded towards the
-        positive side of the scale.
-      </p>
-      </div>
-  </div>
+                        <a class="left carousel-control" href="#myCarousel7" data-slide="prev">&lsaquo;</a>
+                        <a class="right carousel-control" href="#myCarousel7" data-slide="next">&rsaquo;</a>
 
-    <div class="row top-buffer">
-      <div class="col-md-12 col-md-offset-0">
-        <img id="question-image" class="img-responsive" src="https://www.globalgiving.org/pfil/20336/pict_original.jpg"/>
-      </div>
-  </div>
-      </div>
-  <feedback>
-    <div class="col-sm-6 col-md-6 col-md-offset-0 col-lg-6">
-      <h3 id="question-title" class="text-center">Are your main problems being addressed?</h3>
-    </div>
-  <div class="col-sm-6 col-md-6 col-md-offset-0 col-lg-6 text-center" id="map">
-    </div>
-  </feedback>
-</div>
-</section>
-
-<section class="container-fluid" id="section-demo">
-    <div class="v-center">
-        <div id="map"></div>
-        <script src="data/chicago_data.js"></script>
-        <script>
-
-        $("#map").height($(window).height()).width($(window).width());
-
-        var map = L.map('map', {
-          scrollWheelZoom : false,
-          center: [41.8369, -87.6847],
-          zoom: 12
-        });
-
-        var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-        }).addTo(map);
-
-        //addressPoints = segments.map(function (p) { return [p[0], p[1]]; });
-        //console.log(addressPoints);
-
-        var segments10x = [ ];
-
-        for (var i = 0 ; i < 10 ; i++) {
-            for (var j = 0 ; j < segments.length; j++) {
-                segments10x.push(segments[j])
-            }
-        }
-
-        var heat = L.heatLayer(segments10x).addTo(map),
-            draw = false;
-
-        /*map.on({
-            movestart: function () { draw = false; },
-            moveend:   function () { draw = true; },
-            mousemove: function (e) {
-                if (draw) {
-                    heat.addLatLng(e.latlng);
-                }
-            }
-        })*/
-
-        </script>
-    </div>
-    <a href="#section2">
-        <div class="scroll-down bounceInDown animated">
-            <i class="fa fa-sort-desc"></i>
+                </div>
         </div>
-    </a>
-</section>
+
+    </div>
+    </section>
+
+
+
+
+
+    <section class="container-fluid" id="section-demo">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+            <div id="map">
+            <script src="data/chicago_data.js"></script>
+            <script>
+
+                $("#map").height(500).width(800);
+
+                var map = L.map('map', {
+                    scrollWheelZoom : false,
+                    center: [41.8369, -87.6847],
+                    zoom: 12
+                });
+
+                var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+                }).addTo(map);
+
+                //addressPoints = segments.map(function (p) { return [p[0], p[1]]; });
+                //console.log(addressPoints);
+
+                var segments10x = [ ];
+
+                for (var i = 0 ; i < 10 ; i++) {
+                    for (var j = 0 ; j < segments.length; j++) {
+                        segments10x.push(segments[j])
+                    }
+                }
+
+                var heat = L.heatLayer(segments10x).addTo(map),
+                        draw = false;
+
+                /*map.on({
+                 movestart: function () { draw = false; },
+                 moveend:   function () { draw = true; },
+                 mousemove: function (e) {
+                 if (draw) {
+                 heat.addLatLng(e.latlng);
+                 }
+                 }
+                 })*/
+
+            </script>
+        </div>
+
+            </div>
+</div>
+        <a href="#section2">
+            <div class="scroll-down bounceInDown animated">
+                <i class="fa fa-sort-desc"></i>
+            </div>
+        </a>
+    </section>
 
 
 <footer id="footer">
