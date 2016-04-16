@@ -171,97 +171,58 @@
   </div>
 </section>
 
-    <section class="container-fluid" id="section3">
-        <div class="row">
-            <h2 class="text-center">
-                Our Solution
-            </h2>
 
-            <div class="col-sm-6 col-sm-offset-2">
-                <img style="height:500px;" src="images/WeeklyTraffic.png" alt="">
-            </div>
-        <div class="row">
-            <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
-                <h2 class="text-left">
-                Solution
-                </h2>
-                <p align="justify">
-                We propose a service that enhances travel time predictions by aggregating special event information and incorporating “black swan” events into predictions.
-                <br>
-                Our prototype provides traffic congestion predictions for the City of Chicago.  Going beyond typical traffic cycles, we include information about sporting events and festivals to provide a more comprehensive forecast of traffic congestion and neighborhoods that should be avoided each day.
-                <br>
-                This additional dimension allows Chicago residents and visitors to make more informed choices when planning an excursion.  Not just “what’s the best bar to visit?”, but “what’s the best bar to visit next Wednesday?”
-                </p>
-                <br>
-                <br>
-                </div>
-                <div class="container" align="center">
-                    <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Definition</th>
-                            <th>Adjusted R<sup>2</sup></th>
-                            <th>Range of Impact of Special Events on Daily Average Speed</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>SPEED ~ SegmentID + WEEKDAY + HasGame:SegmentID
-                            </td>
-                            <td>0.9631
-                            </td>
-                            <td>6 mph</td>
-                        </tr>
-                        <tr>
-                            <td>SPEED ~ SegmentID + WEEKDAY + HasGame:EventDistance
-                            </td>
-                            <td>0.9622
-                            </td>
-                            <td>0.5 mph
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                </div>
-            </div>
+<section class="container-fluid" id="section3">
+    <style>
+      img {
+          float: right;
+          border: 1px dotted black;
+          margin: 0px 0px 15px 20px;
+      }
+    </style>
+
+    <div class="row">
+      <h1 class="text-center">
+          Our Solution
+      </h1>
+
+    <div class="row">
+          <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <p align="left">
+            <img style="height:500px;" src="images/YelpPlusBlackSwans.png" alt="" style="float:left;margin:0 10px 0 0;">  
+            <br><br>
+            We propose a service that enhances travel time predictions by aggregating special event information and incorporating “black swan” events into forecasts.  
+            <br><br>
+            Our prototype illustrates traffic congestion predictions for the City of Chicago.  Going beyond typical traffic cycles, we include information about sporting events and festivals to provide a more comprehensive forecast of traffic congestion and neighborhoods that should be avoided each day.  
+            <br><br>
+            This additional dimension of information allows Chicago residents and visitors to make more informed choices when planning an events.  Not just “What is the typical commute time for that neighborhood?” but “Given upcoming sporting and entertainment events, what will traffic congestion look like next Wednesday?”
+            </p>
         </div>
-    </section>
+    </div>
+  </div>  
+</section>
 
 
-    <section class="container-fluid" id="section4">
-        <div class="row">
-            <h1 class="text-center">Product/Demo?</h1>
-            <div class="col-sm-6">
-                <div id="myCarousel3" class="carousel slide">
-
-                    <h3>Demo</h3>
-                    <p>We talked about having this closer to the beginning of the site.  Thoughts? 
-                    </p>
-
-                    <div class="carousel-inner">
-                        <div class="active item">
-                            <img style="height:500px;" src="images/YelpPlusBlackSwans.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section class="container-fluid" id="section4">
+    <div class="row">
+        <h1 class="text-center">Product/Demo?</h1>
+        <div class="text-center">
+            <p>We talked about having this closer to the beginning of the site.  Thoughts? </p>
         </div>
-        <br>
-        <br>
-        <div class="row">
+    </div>
 </section>
 
 
 
 <section class="container-fluid" id="section5">
-    <h1 class="text-center">
-        Data
-    </h1>
     <div class="row">
+        <h2 class="text-center">
+            Data
+        </h2>
+
+    <div class="row">    
         <div class="col-md-6 col-md-offset-3">
-            <div id="myCarousel8" class="carousel slide">
+          <div id="myCarousel8" class="carousel slide">
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel8" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel8" data-slide-to="1" class=""></li>
@@ -295,12 +256,43 @@
 
                 </div>
 
-                    <a class="left carousel-control" href="#myCarousel8" data-slide="prev">&lsaquo;</a>
-                    <a class="right carousel-control" href="#myCarousel8" data-slide="next">&rsaquo;</a>
+            <a class="left carousel-control" href="#myCarousel8" data-slide="prev">&lsaquo;</a>
+            <a class="right carousel-control" href="#myCarousel8" data-slide="next">&rsaquo;</a>
 
+        </div>
+
+        <div class="container" align="center">
+            <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
+              <table class="table">
+                  <thead>
+                  <tr>
+                      <th>Definition</th>
+                      <th>Adjusted R<sup>2</sup></th>
+                      <th>Range of Impact of Special Events on Daily Average Speed</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td>SPEED ~ SegmentID + WEEKDAY + HasGame:SegmentID
+                      </td>
+                      <td>0.9631
+                      </td>
+                      <td>6 mph</td>
+                  </tr>
+                  <tr>
+                      <td>SPEED ~ SegmentID + WEEKDAY + HasGame:EventDistance
+                      </td>
+                      <td>0.9622
+                      </td>
+                      <td>0.5 mph
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
             </div>
+        </div>
     </div>
-</div>
+  </div>
 </section>
 
 
@@ -349,110 +341,109 @@
 </section>
 
 
-    <section class="container-fluid" id="section7">
-        <h1 class="text-center">
-            Future
-        </h1>
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div id="myCarousel7" class="carousel slide">
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel7" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel7" data-slide-to="1" class=""></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="active item">
-                            <img style="height:500px;" src="https://www.explainxkcd.com/wiki/images/a/a0/traffic_lights.gif" align="middle">
-                            <div class="carousel-caption">
-                                <h4>Product & Technical Updates</h4>
-                                <p align="justify">
-                                    Expand across multiple cities and include more events
-                                    <br>
-                                    Event Notification to subscribers on the common route
-                                    <br>
-                                    Explore RNN Models for improving the model
-                                    <br>
-                                    Better methods for outlier detection
-                                    <br>
-                                    Move to a 3 tier architecture
+<section class="container-fluid" id="section7">
+    <h1 class="text-center">
+        Future
+    </h1>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div id="myCarousel7" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel7" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel7" data-slide-to="1" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="active item">
+                        <img style="height:500px;" src="https://www.explainxkcd.com/wiki/images/a/a0/traffic_lights.gif" align="middle">
+                        <div class="carousel-caption">
+                            <h4>Product & Technical Updates</h4>
+                            <p align="justify">
+                                Expand across multiple cities and include more events
+                                <br>
+                                Event Notification to subscribers on the common route
+                                <br>
+                                Explore RNN Models for improving the model
+                                <br>
+                                Better methods for outlier detection
+                                <br>
+                                Move to a 3 tier architecture
 
-                                </p>
-                            </div>
+                            </p>
                         </div>
-
-                        <div class="item">
-                            <img style="height:500px;" src="images/Should%20I%20Go%20Architecture.png" alt="">
-                        </div>
-
                     </div>
 
-                        <a class="left carousel-control" href="#myCarousel7" data-slide="prev">&lsaquo;</a>
-                        <a class="right carousel-control" href="#myCarousel7" data-slide="next">&rsaquo;</a>
+                    <div class="item">
+                        <img style="height:500px;" src="images/Should%20I%20Go%20Architecture.png" alt="">
+                    </div>
 
                 </div>
-        </div>
 
+                    <a class="left carousel-control" href="#myCarousel7" data-slide="prev">&lsaquo;</a>
+                    <a class="right carousel-control" href="#myCarousel7" data-slide="next">&rsaquo;</a>
+
+            </div>
     </div>
-    </section>
 
-
-
-
-
-    <section class="container-fluid" id="section-demo">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-2">
-            <div id="map">
-            <script src="data/chicago_data.js"></script>
-            <script>
-
-                $("#map").height(500).width(800);
-
-                var map = L.map('map', {
-                    scrollWheelZoom : false,
-                    center: [41.8369, -87.6847],
-                    zoom: 12
-                });
-
-                var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-                }).addTo(map);
-
-                //addressPoints = segments.map(function (p) { return [p[0], p[1]]; });
-                //console.log(addressPoints);
-
-                var segments10x = [ ];
-
-                for (var i = 0 ; i < 10 ; i++) {
-                    for (var j = 0 ; j < segments.length; j++) {
-                        segments10x.push(segments[j])
-                    }
-                }
-
-                var heat = L.heatLayer(segments10x).addTo(map),
-                        draw = false;
-
-                /*map.on({
-                 movestart: function () { draw = false; },
-                 moveend:   function () { draw = true; },
-                 mousemove: function (e) {
-                 if (draw) {
-                 heat.addLatLng(e.latlng);
-                 }
-                 }
-                 })*/
-
-            </script>
-        </div>
-
-            </div>
 </div>
-        <a href="#section2">
-            <div class="scroll-down bounceInDown animated">
-                <i class="fa fa-sort-desc"></i>
-            </div>
-        </a>
-    </section>
+</section>
+
+
+
+
+
+<section class="container-fluid" id="section-demo">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-2">
+        <div id="map">
+        <script src="data/chicago_data.js"></script>
+        <script>
+
+            $("#map").height(500).width(800);
+
+            var map = L.map('map', {
+                scrollWheelZoom : false,
+                center: [41.8369, -87.6847],
+                zoom: 12
+            });
+
+            var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+            }).addTo(map);
+
+            //addressPoints = segments.map(function (p) { return [p[0], p[1]]; });
+            //console.log(addressPoints);
+
+            var segments10x = [ ];
+
+            for (var i = 0 ; i < 10 ; i++) {
+                for (var j = 0 ; j < segments.length; j++) {
+                    segments10x.push(segments[j])
+                }
+            }
+
+            var heat = L.heatLayer(segments10x).addTo(map),
+                    draw = false;
+
+            /*map.on({
+             movestart: function () { draw = false; },
+             moveend:   function () { draw = true; },
+             mousemove: function (e) {
+             if (draw) {
+             heat.addLatLng(e.latlng);
+             }
+             }
+             })*/
+
+        </script>
+      </div>
+      </div>
+    </div>
+    <a href="#section2">
+        <div class="scroll-down bounceInDown animated">
+            <i class="fa fa-sort-desc"></i>
+        </div>
+    </a>
+</section>
 
 
 <footer id="footer">
