@@ -62,10 +62,13 @@
     </div>
 </nav>
 
+
+
 <section class="container-fluid" id="section1">
     <div class="v-center">
         <h1 class="text-center">Should I Go?</h1>
-        <h2 class="text-center lato animate slideInDown">Avoiding black swans in traffic</h2>
+        <br>
+        <h2 class="text-center lato animate slideInDown">Aggregating special event data to avoid black swans in traffic</h2>
         <p class="text-center">
             <br>
         </p>
@@ -76,6 +79,8 @@
         </div>
     </a>
 </section>
+
+
 
 <section class="container-fluid" id="section2">
 <div class="row">
@@ -160,6 +165,7 @@
 </section>
 
 
+
 <section class="container-fluid quote" id="cleanup">
   <div class="row">
     <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
@@ -170,6 +176,7 @@
     </div>
   </div>
 </section>
+
 
 
 <section class="container-fluid" id="section3">
@@ -203,6 +210,7 @@
 </section>
 
 
+
 <section class="container-fluid" id="section4">
     <div class="row">
         <h1 class="text-center">Product/Demo?</h1>
@@ -216,9 +224,9 @@
 
 <section class="container-fluid" id="section5">
     <div class="row">
-        <h2 class="text-center">
+        <h1 class="text-center">
             Data
-        </h2>
+        </h1>
 
     <div class="row">    
         <div class="col-md-6 col-md-offset-3">
@@ -226,71 +234,67 @@
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel8" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel8" data-slide-to="1" class=""></li>
+                    <li data-target="#myCarousel8" data-slide-to="2" class=""></li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="active item">
-                        <img style="height:500px;" src="images/WithGame1.png" align="middle">
+                    <div class="item active">
+                        <img style="height:500px;" src="images/WithGame1.png">
                         <div class="carousel-caption">
                             <h4>Data Collection</h4>
-                            <p align="justify">
-                                Overview of the process and technology to collect and clean data
-                                <br>
-                                
-                                
+                            <p>
+                                Overview of the process and technology to collect and clean data                                
                             </p>
                         </div>
                     </div>
 
                     <div class="item">
-                        <img style="height:500px;" src="images/WithGame1.png" alt="">
+                        <img style="height:500px;" src="images/WithGame1.png">
                         <div class="carousel-caption">
                             <h4>EDA</h4>
-                            <p align="justify">
+                            <p>
                                 Exploratory data analysis
-                                <br>
-                                
-                                
                             </p>
                         </div>
                     </div>
 
-                </div>
+                    <div class="item">
+                        <div class="container" align="center">
+                            <table class="table" width="100">
+                                <thead>
+                                <tr>
+                                    <th>Definition</th>
+                                    <th>Adjusted R<sup>2</sup></th>
+                                    <th>Special Event Impact on Daily Average Speed</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td width="50">SPEED ~ SegmentID + WEEKDAY + HasGame:SegmentID
+                                    </td>
+                                    <td width="20">0.9631
+                                    </td>
+                                    <td width="20">6 mph</td>
+                                </tr>
+                                <tr>
+                                    <td>SPEED ~ SegmentID + WEEKDAY + HasGame:EventDistance
+                                    </td>
+                                    <td>0.9622
+                                    </td>
+                                    <td>0.5 mph
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>  
 
             <a class="left carousel-control" href="#myCarousel8" data-slide="prev">&lsaquo;</a>
             <a class="right carousel-control" href="#myCarousel8" data-slide="next">&rsaquo;</a>
 
         </div>
 
-        <div class="container" align="center">
-            <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
-              <table class="table">
-                  <thead>
-                  <tr>
-                      <th>Definition</th>
-                      <th>Adjusted R<sup>2</sup></th>
-                      <th>Range of Impact of Special Events on Daily Average Speed</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                      <td>SPEED ~ SegmentID + WEEKDAY + HasGame:SegmentID
-                      </td>
-                      <td>0.9631
-                      </td>
-                      <td>6 mph</td>
-                  </tr>
-                  <tr>
-                      <td>SPEED ~ SegmentID + WEEKDAY + HasGame:EventDistance
-                      </td>
-                      <td>0.9622
-                      </td>
-                      <td>0.5 mph
-                      </td>
-                  </tr>
-                  </tbody>
-              </table>
-            </div>
-        </div>
+
     </div>
   </div>
 </section>
@@ -339,6 +343,7 @@
     </div>
     </div>
 </section>
+
 
 
 <section class="container-fluid" id="section7">
