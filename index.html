@@ -241,15 +241,69 @@
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel8" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel8" data-slide-to="1" class=""></li>
+                    <li data-target="#myCarousel8" data-slide-to="2" class=""></li>
+                    <li data-target="#myCarousel8" data-slide-to="3" class=""></li>
+                    <li data-target="#myCarousel8" data-slide-to="4" class=""></li>
+                    <li data-target="#myCarousel8" data-slide-to="5" class=""></li>
+                    <li data-target="#myCarousel8" data-slide-to="6" class=""></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img style="height:500px;" src="images/WithGame1.png">
+                        <img style="height:500px;" src="images/CTAbus.jpg">
                           <div class="container">
                             <div class="carousel-caption">
-                              <h4>Data Collection</h4>
-                              <p>
-                                  Overview of the process and technology to collect and clean data                                
+                              <h4 align="justify">Data Collection: Chicago Traffic</h4>
+                              <p align="justify">
+                                  The Chicago Traffic Tracker estimates traffic congestion on 300 miles of principal arterial streets in real-time by continuously monitoring and analyzing GPS traces received from Chicago Transit Authority buses. Congestion estimates provide the observed speed, typically for one-half mile of a street in one direction of traffic, and are produced every 10 minutes. 
+                              </p>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img style="height:500px;" src="images/lollapalooza.jpg">
+                          <div class="container">
+                            <div class="carousel-caption">
+                              <h4 align="justify">Data Collection: Special Event Permits</h4>
+                              <p align="justify">
+                                  The City of Chicago provides open access to its database of event permits.  We were particularly interested in the “Festival/Performance/12,001+ Event” permit,  granted for events on City of Chicago property anticipating more than 12,000 attendees.  Examples include Lollapalooza and the Chicago marathon. The database spans 2012 through November 2016 - including both historical and upcoming events.
+                              </p>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img style="height:500px;" src="images/United_Center.jpg">
+                          <div class="container">
+                            <div class="carousel-caption">
+                              <h4 align="justify">Data Collection: Sporting Events</h4>
+                              <p align="justify">
+                                  Basketball-reference.com and Pro-football-reference.com provided historical game data sets for the Chicago Bulls and Bears.  This included game dates, start times, home or away, and the number of overtimes.  
+                              </p>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img style="height:500px;" src="images/iPythonNotebook.png">
+                          <div class="container">
+                            <div class="carousel-caption">
+                              <h4 align="justify">Data Processing: Python</h4>
+                              <p align="justify">
+                                  To combine the data sets, we used iPython Notebook and Pandas, an open source library which provides data structure and analysis tools for Python. We imported historical traffic, sporting event and festival events data.  The next step translating disparate system timestamps into a uniform format, eliminating unnecessary fields, and calculating each segment’s central geographical coordinates.  To process sporting data, we used the type of game, start times and the number of overtimes to approximate game end timestamps.  We used trigonometry to calculate the distance between traffic segment coordinates and game locations.  
+                              </p>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img style="height:500px;" src="images/BusOnLift_edit.png">
+                          <div class="container">
+                            <div class="carousel-caption">
+                              <h4 align="justify">Challenges and Data Cleaning</h4>
+                              <p align="justify">
+                                  We encountered several data issues with the Chicago Traffic Tracker estimates. For many records, segment data was recorded at ten minute intervals as advertised, but every timestamp had been hard-coded to 11:50PM.  This meant that, although we had 144 records for each day, we could not ascertain the correct order of the time series data. We could only study the general distribution of traffic speeds on each day. <br>
+                                  A more entertaining anomaly was city bus bedtime. We noticed that there were very few, and odd data points between 11pm and 4am.  This makes sense when you consider that all busses were in the yard and garage, only being moved for maintenance.  We needed to discard those data points. 
                               </p>
                           </div>
                         </div>
@@ -257,11 +311,26 @@
 
                     <div class="item">
                         <img style="height:500px;" src="images/WithGame1.png">
-                        <div class="container">
-                          <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget.</p>
-                            <a class="btn btn-large btn-primary" href="#">Learn more</a>
+                          <div class="container">
+                            <div class="carousel-caption">
+                              <h4 align="justify">Data Analysis</h4>
+                              <p align="justify">
+                                  The limitations of our time series meant that analysis was not as straight-forward as we hoped.  In the end, the team used regional, every-ten-minute data to understand daily rush hour cycles and segment-level, daily data to understand the impact of special events on surrounding arterial streets.  If we continue this project in the future, we will collect and store real-time Chicago Traffic Tracker data over a period of 6-12 months, with the correct time stamps, to build a more comprehensive forecasting foundation. 
+                              </p>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img style="height:500px;" src="images/SampleCompare.png">
+                          <div class="container">
+                            <div class="carousel-caption">
+                              <h4 align="justify">Results</h4>
+                              <p align="justify">
+                                  Our analysis indicates that, on special event days, affected traffic segments’ average speed can be reduced by X-Y miles per hour.  A traffic forecast based on typical traffic patterns would indicate expected speeds of J-K miles per hour, but a forecast including the special event forecasts speeds reduced to M-N miles per hour due to congestion. <br><br>
+                                  <b><i>This is the value of our project: leveraging a new variable - special events - to improve the accuracy of travel forecasts, allow millions of commuters to navigate their cities more efficiently, and reduce the compounding effects of traffic congestion on city streets.</b></i>
+ 
+                              </p>
                           </div>
                         </div>
                     </div>
@@ -269,7 +338,7 @@
 
             <a class="left carousel-control" href="#myCarousel8" data-slide="prev">&lsaquo;</a>
             <a class="right carousel-control" href="#myCarousel8" data-slide="next">&rsaquo;</a>
-
+          </div>
         </div>
 
 
