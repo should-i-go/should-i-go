@@ -46,11 +46,11 @@
                 <li><a href="#section1">Home</a></li>
                 <li><a href="#section2">Problem & Impact</a></li>
                 <li><a href="#section3">Solution</a></li>
-                <li><a href="#section4">Product/Demo?</a></li>
                 <li><a href="#section5">Data</a></li>
+                <li><a href="#section-demo">Demo</a></li>
                 <li><a href="#section6">Technology</a></li>
                 <li><a href="#section7">Future</a></li>
-                <li><a href="#section-demo">Demo</a></li>
+
                 <li>&nbsp;</li>
             </ul>
             <!--
@@ -218,17 +218,6 @@
 
 
 
-<section class="container-fluid" id="section4">
-    <div class="row">
-        <h1 class="text-center">Product/Demo?</h1>
-        <div class="text-center">
-            <p>We talked about having this closer to the beginning of the site.  Thoughts? </p>
-        </div>
-    </div>
-</section>
-
-
-
 <section class="container-fluid" id="section5">
     <div class="row">
         <h1 class="text-center">
@@ -346,9 +335,63 @@
   </div>
 </section>
 
+    <section class="container-fluid" id="section-demo">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                <div id="map">
+                    <script src="data/chicago_data.js"></script>
+                    <script>
+
+                        $("#map").height(500).width(800);
+
+                        var map = L.map('map', {
+                            scrollWheelZoom : false,
+                            center: [41.8369, -87.6847],
+                            zoom: 12
+                        });
+
+                        var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+                        }).addTo(map);
+
+                        //addressPoints = segments.map(function (p) { return [p[0], p[1]]; });
+                        //console.log(addressPoints);
+
+                        var segments10x = [ ];
+
+                        for (var i = 0 ; i < 10 ; i++) {
+                            for (var j = 0 ; j < segments.length; j++) {
+                                segments10x.push(segments[j])
+                            }
+                        }
+
+                        var heat = L.heatLayer(segments10x).addTo(map),
+                                draw = false;
+
+                        /*map.on({
+                         movestart: function () { draw = false; },
+                         moveend:   function () { draw = true; },
+                         mousemove: function (e) {
+                         if (draw) {
+                         heat.addLatLng(e.latlng);
+                         }
+                         }
+                         })*/
+
+                    </script>
+                </div>
+            </div>
+        </div>
+        <a href="#section2">
+            <div class="scroll-down bounceInDown animated">
+                <i class="fa fa-sort-desc"></i>
+            </div>
+        </a>
+    </section>
 
 
-<section class="container-fluid" id="section6">
+
+    <section class="container-fluid" id="section6">
     <h1 class="text-center">
         Technology
     </h1>
@@ -435,60 +478,6 @@
 
 
 
-<section class="container-fluid" id="section-demo">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-2">
-        <div id="map">
-        <script src="data/chicago_data.js"></script>
-        <script>
-
-            $("#map").height(500).width(800);
-
-            var map = L.map('map', {
-                scrollWheelZoom : false,
-                center: [41.8369, -87.6847],
-                zoom: 12
-            });
-
-            var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-            }).addTo(map);
-
-            //addressPoints = segments.map(function (p) { return [p[0], p[1]]; });
-            //console.log(addressPoints);
-
-            var segments10x = [ ];
-
-            for (var i = 0 ; i < 10 ; i++) {
-                for (var j = 0 ; j < segments.length; j++) {
-                    segments10x.push(segments[j])
-                }
-            }
-
-            var heat = L.heatLayer(segments10x).addTo(map),
-                    draw = false;
-
-            /*map.on({
-             movestart: function () { draw = false; },
-             moveend:   function () { draw = true; },
-             mousemove: function (e) {
-             if (draw) {
-             heat.addLatLng(e.latlng);
-             }
-             }
-             })*/
-
-        </script>
-      </div>
-      </div>
-    </div>
-    <a href="#section2">
-        <div class="scroll-down bounceInDown animated">
-            <i class="fa fa-sort-desc"></i>
-        </div>
-    </a>
-</section>
-
 
 <footer id="footer">
     <div class="container">
@@ -496,7 +485,6 @@
           <div class="col-xs-6 col-sm-6 col-md-3 column">
               <h4>About the Project</h4>
               <ul class="nav">
-                  <li><a href="#" data-toggle="modal" data-target="#goalsModal">Goals</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#toolsModal">Tools Used</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#testingModal">User Testing</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#sourcesModal">Data Sources</a></li>
