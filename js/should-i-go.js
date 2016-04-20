@@ -7,6 +7,10 @@
     '/DemoDataSeries.csv';
     //'//should-i-go.github.io/should-i-go-sandbox/DemoDataSeries.csv';
 
+  var segmentLatLongCsvUrl = should.segmentLatLongCsvUrl =
+    '/Segment-Lat-Long.csv';
+    //'//should-i-go.github.io/should-i-go-sandbox/Segment-Lat-Long.csv';
+
   jQuery(document).ready(function() {
     var speedCsvPromise = jQuery.when(jQuery.ajax(speedCsvUrl));
 
@@ -19,12 +23,59 @@
 
     }).then(function parseCsv(speedCsv) {
 
-      // shift strips the first (header row) off the raw, leaving only data
       var speedCsvRows = should.speedCsvRows = d3.csv.parse(speedCsv);
       console.log('Loaded speed CSV rows', speedCsvRows.length);
 
       return speedCsvRows;
 
+    });
+
+    var segmentLatLongCsvPromise = jQuery.when(jQuery.ajax(
+      segmentLatLongCsvUrl
+    ));
+
+    segmentLatLongCsvPromise.then(function loadCsv(content) {
+
+      should.segmentLatLongCsv = content;
+      console.log('Loaded segment lat long CSV data');
+
+      return should.segmentLatLongCsv;
+
+    }).then(function parseCsv(segmentLatLongCsv) {
+
+      var segmentLatLongCsvRows = 
+        should.segmentLatLongCsvRows = 
+          d3.csv.parse(segmentLatLongCsv);
+
+      console.log('Loaded segment lat long CSV rows', 
+        segmentLatLongCsvRows.length);
+
+      return segmentLatLongCsvRows;
+
+    }).then(function buildLatLongBySegmentIndex(segmentLatLongCsvRows) {
+
+      var latLongBySegmentIndex = should.latLongBySegmentIndex = [ ];
+
+      segmentLatLongCsvRows.map(function addRowToIndex(row) {
+        var segmentId = row.SEGMENTID;
+        var startLat = row[" START_LATITUDE"];
+        var endLat = row[" END_LATITUDE"];
+        var startLong = row.START_LONGITUDE;
+        var endLong = row.END_LONGITUDE;
+
+        latLongBySegmentIndex[segmentId] = {
+          startLat: startLat,
+          endLat: endLat,
+          startLong: startLong,
+          endLong: endLong
+        }
+      });
+
+      console.log('Built lat long by segment index', 
+        latLongBySegmentIndex.length);
+
+
+      return latLongBySegmentIndex;
     });
 
 
