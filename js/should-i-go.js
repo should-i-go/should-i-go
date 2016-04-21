@@ -9,7 +9,7 @@
 
   var segmentLatLongCsvUrl = should.segmentLatLongCsvUrl =
     //'/Segment-Lat-Long.csv';
-    '//should-i-go.github.io/should-i-go-sandbox/Segment-Lat-Long.csv';
+    '//should-i-go.github.io/should-i-go/Segment-Lat-Long.csv';
 
   jQuery(document).ready(function() {
     var selectedDate = should.selectedDate = "2014-12-04";
