@@ -94,6 +94,31 @@
 
           console.log('render: selected rows', speed, selectedDate, speedRows);
 
+          $("#map").height(500).width(800);
+
+          var map = L.map('map', {
+              scrollWheelZoom : false,
+              center: [41.8369, -87.6847],
+              zoom: 12
+          });
+
+          var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+          }).addTo(map);
+
+          //addressPoints = segments.map(function (p) { return [p[0], p[1]]; });
+          //console.log(addressPoints);
+
+          var segments10x = [ ];
+
+          for (var i = 0 ; i < 10 ; i++) {
+              for (var j = 0 ; j < segments.length; j++) {
+                  segments10x.push(segments[j])
+              }
+          }
+
+          var heat = L.heatLayer(segments10x).addTo(map),
+                  draw = false;
         }
 
         jQuery('input[name="demoDate"]').daterangepicker({
