@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
     
 
     <link rel="stylesheet" href="css/styles.css" />
@@ -26,6 +27,8 @@
       <script src="js/barchart.js"></script>
       <script src="//cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.1/lodash.min.js"></script>
+      <script src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+      <script src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
       <script src="js/leaflet-heat.js"></script>
       <script src="js/should-i-go.js"></script>
       <!-- Additional scripts are loaded at the bottom -->
@@ -334,6 +337,22 @@
     <section class="container-fluid" id="section-demo">
         <div class="row">
             <div class="col-md-10 col-md-offset-2">
+                <div>
+                  <!--<span>Select a date to show:</span>-->
+                  <span>
+                    <input type="text" name="demoDate" value="12/14/2014" />
+                  </span>
+                  <span>
+                    <button type="button" name="noGame" class="btn btn-primary">None</button>
+
+                    <!-- Indicates a successful or positive action -->
+                    <button type="button" name="bullsGame" class="btn btn-success">Bulls</button>
+
+                    <!-- Contextual button for informational alert messages -->
+                    <button type="button" name="bearsGame" class="btn btn-info">Bears</button>
+                  </span>
+                </div>
+
                 <div id="map">
                     <script src="data/chicago_data.js"></script>
                     <script>

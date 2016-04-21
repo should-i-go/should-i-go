@@ -14,7 +14,7 @@
   jQuery(document).ready(function() {
     var speedCsvPromise = jQuery.when(jQuery.ajax(speedCsvUrl));
 
-    speedCsvPromise.then(function loadCsv(content) {
+    var speedFinalPromise = speedCsvPromise.then(function loadCsv(content) {
 
       should.speedCsv = content;
       console.log('Loaded speed CSV data');
@@ -34,7 +34,7 @@
       segmentLatLongCsvUrl
     ));
 
-    segmentLatLongCsvPromise.then(function loadCsv(content) {
+    var indexPromise = segmentLatLongCsvPromise.then(function loadCsv(content) {
 
       should.segmentLatLongCsv = content;
       console.log('Loaded segment lat long CSV data');
@@ -78,6 +78,36 @@
       return latLongBySegmentIndex;
     });
 
+    Promise
+      .all([speedFinalPromise, indexPromise])
+      .then(function (data) {
+        var speed = data[0];
+        var index = data[1];
+
+        console.log("resolved all", speed, index);
+
+        function render(selectedDate, gameType) {
+          var speedRows = speed.filter(function (row) {
+            return ("2014-12-04" == row.DATE) 
+              && (gameType == row.GameType)
+          });
+
+          console.log('render: selected rows', speed, selectedDate, speedRows);
+
+        }
+
+        jQuery('input[name="demoDate"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true
+        });
+
+        render("2014-12-04", "");
+      });
+
+    
+
+
+    
 
   });
 
