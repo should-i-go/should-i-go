@@ -107,7 +107,11 @@
           console.log("Rendering renderDate and gameType",
             renderDate, gameType);
 
-          var speedRows = speed.filter(function (row) {
+          var speedRows = speed.filter(function (row, index) {
+            if (index < 10) {
+              console.log("Filtering ", 
+                row.DATE, renderDate, row.GameType, gameType);
+            }
             return (renderDate == row.DATE) 
               && (gameType == row.GameType)
           });
@@ -172,6 +176,36 @@
           console.log("new date selection", newDate);
 
           selectedDate = should.selectedDate = newDate;
+
+          render(selectedDate, selectedGameType);
+
+        });
+
+        jQuery('#noGame').click(function () {
+
+          selectedGameType = should.selectedGameType = "";
+
+          console.log("No game selection", selectedGameType);
+
+          render(selectedDate, selectedGameType);
+
+        });
+
+        jQuery('#bullsGame').click(function () {
+
+          selectedGameType = should.selectedGameType = "Bulls";
+
+          console.log("Bulls game selection", selectedGameType);
+
+          render(selectedDate, selectedGameType);
+
+        });
+
+        jQuery('#bearsGame').click(function () {
+
+          selectedGameType = should.selectedGameType = "Bears";
+
+          console.log("Bears game selection", selectedGameType);
 
           render(selectedDate, selectedGameType);
 
