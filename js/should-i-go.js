@@ -64,10 +64,10 @@
         var endLong = row.END_LONGITUDE;
 
         latLongBySegmentIndex[segmentId] = {
-          startLat: startLat,
-          endLat: endLat,
-          startLong: startLong,
-          endLong: endLong
+          startLat: parseFloat(startLat),
+          endLat: parseFloat(endLat),
+          startLong: parseFloat(startLong),
+          endLong: parseFloat(endLong)
         }
       });
 
@@ -86,25 +86,56 @@
 
         console.log("resolved all", speed, index);
 
+        $("#map").height(500).width(800);
+
+        var map = L.map('map', {
+            scrollWheelZoom : false,
+            center: [41.8369, -87.6847],
+            zoom: 12
+        });
+
+        var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
         function render(selectedDate, gameType) {
           var speedRows = speed.filter(function (row) {
-            return ("2014-12-04" == row.DATE) 
+            return (selectedDate == row.DATE) 
               && (gameType == row.GameType)
           });
 
-          console.log('render: selected rows', speed, selectedDate, speedRows);
-
-          $("#map").height(500).width(800);
-
-          var map = L.map('map', {
-              scrollWheelZoom : false,
-              center: [41.8369, -87.6847],
-              zoom: 12
+          var selectedSegments = speedRows.map(function(row) {
+            return index[row.SEGMENTID];
           });
 
-          var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-              attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-          }).addTo(map);
+          var selectedSpeeds = speedRows.map(function (row) {
+            return parseFloat(row.SPEED);
+          });
+
+
+          var samples = [ ];
+
+          speedRows.map(function (row, index) {
+            var rowSegment = selectedSegments[index];
+            var rowSpeed = selectedSpeeds[index];
+            var sampleLat = ( rowSegment.startLat + rowSegment.endLat ) / 2;
+            var sampleLong = ( rowSegment.startLong + rowSegment.endLong ) / 2;
+
+            if (index < 10) {
+              console.log(sampleLat, sampleLong, rowSpeed);
+            }
+
+            for (var i = 35 ; (i > rowSpeed) && (i > 0) ; i--) {
+              samples.push([ sampleLat, sampleLong ]);
+            }
+          }); 
+
+
+
+          console.log('render: selected rows', 
+            speedRows, selectedSegments, selectedSpeeds, samples);
+
+
 
           //addressPoints = segments.map(function (p) { return [p[0], p[1]]; });
           //console.log(addressPoints);
@@ -117,7 +148,7 @@
               }
           }
 
-          var heat = L.heatLayer(segments10x).addTo(map),
+          var heat = L.heatLayer(samples).addTo(map),
                   draw = false;
         }
 
