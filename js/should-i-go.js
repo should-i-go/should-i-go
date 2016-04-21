@@ -4,12 +4,12 @@
 (function (window, document, d3, jQuery, Promise, moment) {
   var should = window.should = { };
   var speedCsvUrl = should.speedCsvUrl =
-    '/DemoDataSeries.csv';
-    //'//should-i-go.github.io/should-i-go-sandbox/DemoDataSeries.csv';
+    //'/DemoDataSeries.csv';
+    '//should-i-go.github.io/should-i-go-sandbox/DemoDataSeries.csv';
 
   var segmentLatLongCsvUrl = should.segmentLatLongCsvUrl =
-    '/Segment-Lat-Long.csv';
-    //'//should-i-go.github.io/should-i-go-sandbox/Segment-Lat-Long.csv';
+    //'/Segment-Lat-Long.csv';
+    '//should-i-go.github.io/should-i-go-sandbox/Segment-Lat-Long.csv';
 
   jQuery(document).ready(function() {
     var selectedDate = should.selectedDate = "2014-12-04";
