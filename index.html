@@ -102,7 +102,7 @@
 
         <div class="carousel-inner">
           <div class="active item">
-            <img style="height:550px;" src="images/ChiTrafficLandscape.jpg" alt="" align="center">
+            <img class="img-responsive center-block" src="images/ChiTrafficLandscape.jpg" alt="First slide">
               <div class="container">
                 <div class="carousel-caption">
                    <p align="justify">
@@ -158,22 +158,28 @@
 
 
 <section class="container-fluid quote" id="cleanup">
+<style>
+      img {
+          float: right;
+          border: 1px dotted black;
+          margin: 0px 0px 15px 20px;
+      }
+    </style>
   <div class="row">
       <h2 class="text-center">
-          What's different from Google Maps
+          What's different from Google Maps? <br> <br>
       </h2>
 
-    <div class="image">
-          <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
-            <img style="height:500px;" src="images/GMapTrafficPred.png" alt="">
-
-              </div>
-        <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-3">
+    <div class="row">
+      <div class="col-xs-7 col-xs-offset-2 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
+          <p>
+            <img style="height:375px;" src="images/GMapTrafficPred.png" alt="" style="float:middle;">  
+                  <br><br><br>
             Google and Apple maps have made modern life immeasurably easier, but they provide <i>typical</i> travel times, and typical is a critical limitation.  What about atypical days?  Like many parts of the city, their predictions falter under the crush of 41,000 fans headed to a ball park on Thursday night.
+            </p>
         </div>
     </div>
-    </div>
-  </div>
+</div>
 </section>
 
 
@@ -336,12 +342,17 @@
 </section>
 
     <section class="container-fluid" id="section-demo">
-        <div class="row">
+    <div class="row">
+      <h1 class="text-center">
+          Demo <br>
+      </h1>
+
+    <div class="row">
             <div class="col-md-10 col-md-offset-2">
                 <div>
                   <!--<span>Select a date to show:</span>-->
                   <span>
-                    <input type="text" name="demoDate" value="12/14/2014" />
+                    <input type="text" name="demoDate" value="12/14/2014"/ style="color:black;">
                   </span>
                   <span>
                     <button type="button" id="noGame" class="btn btn-primary">None</button>
@@ -359,11 +370,7 @@
                 </div>
             </div>
         </div>
-        <a href="#section2">
-            <div class="scroll-down bounceInDown animated">
-                <i class="fa fa-sort-desc"></i>
-            </div>
-        </a>
+      </div>
     </section>
 
 
