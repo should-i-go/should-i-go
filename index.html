@@ -35,37 +35,37 @@
 
   </head>
   <body data-spy="scroll" data-target="#navbar-collapsible">
-    <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+    <nav class="navbar navbar-trans navbar-fixed-top" role="navigation" id="nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-        </div>
-        <div class="nav navbar-collapse collapse" id="navbar-collapsible">
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="#section1">Home</a></li>
-                <li><a href="#section2">Problem</a></li>
-                <li><a href="#section3">Solution</a></li>
-                <li><a href="#section5">Data Science</a></li>
-                <li><a href="#section-demo">Demo</a></li>
-                <li><a href="#section6">Technology</a></li>
-                <li><a href="#section7">Future</a></li>
+            </div>
+            <div class="nav navbar-collapse collapse" id="navbar-collapsible">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#section1">Home</a></li>
+                    <li><a href="#section2">Problem</a></li>
+                    <li><a href="#section3">Solution</a></li>
+                    <li><a href="#section5">Data Science</a></li>
+                    <li><a href="#section-demo">Demo</a></li>
+                    <li><a href="#section6">Technology</a></li>
+                    <li><a href="#section7">Future</a></li>
 
-                <li>&nbsp;</li>
-            </ul>
-            <!--
-            <ul class="nav-sources navbar-right">
-                <li><a href="#" data-toggle="modal" data-target="#sourcesModal"><i>Sources and Methods</i></a></li>
-            </ul>
-            -->
+                    <li>&nbsp;</li>
+                </ul>
+                <!--
+                <ul class="nav-sources navbar-right">
+                    <li><a href="#" data-toggle="modal" data-target="#sourcesModal"><i>Sources and Methods</i></a></li>
+                </ul>
+                -->
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 
 
@@ -343,17 +343,44 @@
 -->
 
     <section class="container-fluid" id="section-demo">
-    <div class="row">
-      <h1 class="text-center">
+      <h1 class="text-center" id="demo-h1">
           Demo <br>
       </h1>
 
-    <div class="row">
-            <div class="col-md-10 col-md-offset-2">
-                <div>
+      <div class="row" id="demo-row">
+            <div class="col-md-8 col-md-offset-2">
+                <div id="demo-controls" class="well">
+
+                  <!-- Split button -->
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default">Dec 14, 2014</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="caret"></span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Dec 5, 2014</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">Dev 25, 2014</a></li>
+                      <li><a href="#">Dev 27, 2014</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">No Game - Average</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="caret"></span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Bulls Game - Average</a></li>
+                      <li><a href="#">Bears Game - Average</a></li>
+                      <li role="separator" class="divider"></li>
+                    </ul>
+                  </div>
                   <!--<span>Select a date to show:</span>-->
                   <span>
-                    <input type="text" name="demoDate" value="12/14/2014"/ style="color:black;">
+                    <input type="text" name="demoDate" value="12/14/2014" style="color:black;">
                   </span>
                   <span>
                     <button type="button" id="noGame" class="btn btn-primary">None</button>
@@ -366,11 +393,11 @@
                   </span>
                 </div>
 
+                
                 <div id="map">
-                    <script src="data/chicago_data.js"></script>
+                  <script src="data/chicago_data.js"></script>
                 </div>
             </div>
-        </div>
       </div>
     </section>
 
