@@ -89,7 +89,23 @@
 
         console.log("resolved all", speed, index);
 
-        $("#map").height(500).width(800);
+        function setMapHeight() {
+          var demoSectionHeight = $('#section-demo').height();
+          var demoH1Height = $('#demo-h1').height();
+          var demoControlsHeight = $('#demo-controls').height();
+          var navHeight = $('#nav').height();
+
+          var mapHeight = demoSectionHeight 
+            - demoH1Height 
+            - demoControlsHeight
+            - navHeight;
+          console.log('Setting map height to ', mapHeight);
+
+          $('#map').height(mapHeight);
+        }
+
+        setMapHeight();
+        //$("#map").height(500).width(800);
 
         var map = L.map('map', {
             scrollWheelZoom : false,
