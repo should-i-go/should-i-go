@@ -105,7 +105,6 @@
         }
 
         setMapHeight();
-        //$("#map").height(500).width(800);
 
         var map = L.map('map', {
             scrollWheelZoom : false,
@@ -119,18 +118,86 @@
 
         var heat = null;
 
+        function computePeakSpeed(speed, renderDate, baseType, averageType) {
+          console.log('Computing Peak speed', 
+            renderDate, baseType, averageType);
+
+          var baseRows = speed.filter(function (row, index) {
+            if (index < 10) {
+              console.log("computePeakSpeed base ", 
+                row.DATE, renderDate, row.GameType, baseType);
+            }
+            return (renderDate == row.DATE) 
+              && (baseType == row.GameType)
+          });
+
+          var averageRows = speed.filter(function (row, index) {
+            if (index < 10) {
+              console.log("computePeakSpeed average ", 
+                row.DATE, renderDate, row.GameType, averageType);
+            }
+            return (renderDate == row.DATE) 
+              && (averageType == row.GameType)
+          });
+
+          
+          var rowsBySegmentIdIndex = { };
+
+          baseRows.forEach(function (baseRow) {
+            rowsBySegmentIdIndex[baseRow.SEGMENTID] = {
+              SEGMENTID: baseRow.SEGMENTID,
+              SPEED: parseFloat(baseRow.SPEED)
+            }
+          });
+
+          averageRows.forEach(function (averageRow, index) {
+            var segmentId = averageRow.SEGMENTID;
+            var outputRow = rowsBySegmentIdIndex[segmentId];
+            var baseSpeed = outputRow.SPEED;
+            var averageSpeed = parseFloat(averageRow.SPEED);
+
+            var imputedSpeed = baseSpeed + 
+              ( (averageSpeed - baseSpeed) * 8);
+
+            if (index < 10) {
+              console.log("computePeakSpeed baseSpeed averageSpeed ", 
+                segmentId, baseSpeed, averageSpeed, imputedSpeed);
+            }
+
+          });
+
+          var speedRows = Object.keys(rowsBySegmentIdIndex).map(function (key) {
+            return rowsBySegmentIdIndex[key]
+          });
+
+
+          console.log('computePeakSpeed base and average rows',
+            baseRows, averageRows, rowsBySegmentIdIndex, speedRows);
+
+
+          //var speedRows = averageRows;
+
+          return speedRows;
+        } 
+
         function render(renderDate, gameType) {
           console.log("Rendering renderDate and gameType",
             renderDate, gameType);
 
-          var speedRows = speed.filter(function (row, index) {
-            if (index < 10) {
-              console.log("Filtering ", 
-                row.DATE, renderDate, row.GameType, gameType);
-            }
-            return (renderDate == row.DATE) 
-              && (gameType == row.GameType)
-          });
+          if (gameType === 'BullsPeak') {
+            var speedRows = computePeakSpeed(speed, renderDate, '', 'Bulls');
+          } else if (gameType === 'BearsPeak') {
+            var speedRows = computePeakSpeed(speed, renderDate, '', 'Bears');
+          } else {
+            var speedRows = speed.filter(function (row, index) {
+              if (index < 10) {
+                console.log("Filtering ", 
+                  row.DATE, renderDate, row.GameType, gameType);
+              }
+              return (renderDate == row.DATE) 
+                && (gameType == row.GameType)
+            });
+          }
 
           var selectedSegments = speedRows.map(function(row) {
             return index[row.SEGMENTID];
@@ -260,9 +327,33 @@
 
           selectedGameType = should.selectedGameType = "Bears";
 
-          jQuery('#selectedGame').text('Bears Game - Average');
+          jQuery('#selectedGame').text('Bears Game');
 
           console.log("Bears game selection", selectedGameType);
+
+          render(selectedDate, selectedGameType);
+
+        });
+
+        jQuery('#bullsGamePeak').click(function () {
+
+          selectedGameType = should.selectedGameType = "BullsPeak";
+
+          jQuery('#selectedGame').text('Bulls Game - Peak');
+
+          console.log("Bulls game (peak) selection", selectedGameType);
+
+          render(selectedDate, selectedGameType);
+
+        });
+
+        jQuery('#bearsGamePeak').click(function () {
+
+          selectedGameType = should.selectedGameType = "BearsPeak";
+
+          jQuery('#selectedGame').text('Bears Game - Peak');
+
+          console.log("Bears game (peak) selection", selectedGameType);
 
           render(selectedDate, selectedGameType);
 
