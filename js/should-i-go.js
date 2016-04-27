@@ -87,7 +87,7 @@
         var speed = data[0];
         var index = data[1];
 
-        console.log("resolved all", speed, index);
+        // console.log("resolved all", speed, index);
 
         function setMapHeight() {
           var demoSectionHeight = $('#section-demo').height();
@@ -123,19 +123,19 @@
             renderDate, baseType, averageType);
 
           var baseRows = speed.filter(function (row, index) {
-            if (index < 10) {
-              console.log("computePeakSpeed base ", 
-                row.DATE, renderDate, row.GameType, baseType);
-            }
+            // if (index < 10) {
+            //   console.log("computePeakSpeed base ", 
+            //     row.DATE, renderDate, row.GameType, baseType);
+            // }
             return (renderDate == row.DATE) 
               && (baseType == row.GameType)
           });
 
           var averageRows = speed.filter(function (row, index) {
-            if (index < 10) {
-              console.log("computePeakSpeed average ", 
-                row.DATE, renderDate, row.GameType, averageType);
-            }
+            // if (index < 10) {
+            //   console.log("computePeakSpeed average ", 
+            //     row.DATE, renderDate, row.GameType, averageType);
+            // }
             return (renderDate == row.DATE) 
               && (averageType == row.GameType)
           });
@@ -159,10 +159,10 @@
             var imputedSpeed = baseSpeed +
               ( (averageSpeed - baseSpeed) * 16.0);
 
-            if (index < 10) {
-              console.log("computePeakSpeed baseSpeed averageSpeed ", 
-                segmentId, baseSpeed, averageSpeed, imputedSpeed);
-            }
+            // if (index < 10) {
+            //   console.log("computePeakSpeed baseSpeed averageSpeed ", 
+            //     segmentId, baseSpeed, averageSpeed, imputedSpeed);
+            // }
 
             outputRow.SPEED = imputedSpeed;
 
@@ -173,8 +173,8 @@
           });
 
 
-          console.log('computePeakSpeed base and average rows',
-            baseRows, averageRows, rowsBySegmentIdIndex, speedRows);
+          // console.log('computePeakSpeed base and average rows',
+          //   baseRows, averageRows, rowsBySegmentIdIndex, speedRows);
 
 
           //var speedRows = averageRows;
@@ -192,10 +192,10 @@
             var speedRows = computePeakSpeed(speed, renderDate, '', 'Bears');
           } else {
             var speedRows = speed.filter(function (row, index) {
-              if (index < 10) {
-                console.log("Filtering ", 
-                  row.DATE, renderDate, row.GameType, gameType);
-              }
+              // if (index < 10) {
+              //   console.log("Filtering ", 
+              //     row.DATE, renderDate, row.GameType, gameType);
+              // }
               return (renderDate == row.DATE) 
                 && (gameType == row.GameType)
             });
@@ -218,9 +218,9 @@
             var sampleLat = ( rowSegment.startLat + rowSegment.endLat ) / 2;
             var sampleLong = ( rowSegment.startLong + rowSegment.endLong ) / 2;
 
-            if (index < 10) {
-              console.log(sampleLat, sampleLong, rowSpeed);
-            }
+            // if (index < 10) {
+            //   console.log(sampleLat, sampleLong, rowSpeed);
+            // }
 
             for (var i = 30 ; (i > rowSpeed) && (i > 12) ; i --) {
               samples.push([ sampleLat, sampleLong ]);
@@ -229,8 +229,8 @@
 
 
 
-          console.log('render: selected rows', 
-            speedRows, selectedSegments, selectedSpeeds, samples);
+          // console.log('render: selected rows', 
+          //   speedRows, selectedSegments, selectedSpeeds, samples);
 
 
           if (heat) {
@@ -239,8 +239,6 @@
           heat = L.heatLayer(samples).addTo(map);
           var draw = false;
         }
-
-        console.log('yo');
 
         var availableDates = [
           '2014-12-04',
