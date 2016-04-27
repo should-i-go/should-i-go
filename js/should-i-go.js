@@ -164,23 +164,58 @@
             speedRows, selectedSegments, selectedSpeeds, samples);
 
 
-
-          //addressPoints = segments.map(function (p) { return [p[0], p[1]]; });
-          //console.log(addressPoints);
-
-          var segments10x = [ ];
-
-          for (var i = 0 ; i < 10 ; i++) {
-              for (var j = 0 ; j < segments.length; j++) {
-                  segments10x.push(segments[j])
-              }
-          }
-
           if (heat) {
             map.removeLayer(heat);
           }
           heat = L.heatLayer(samples).addTo(map);
           var draw = false;
+        }
+
+        console.log('yo');
+
+        var availableDates = [
+          '2014-12-04',
+          '2014-12-25',
+          '2014-12-27'
+        ];
+
+        var prettyPrintDates = {
+          '2014-12-04': 'Dec 4, 2014',
+          '2014-12-25': 'Dec 25, 2014',
+          '2014-12-27': 'Dec 27, 2015'
+        }
+
+        var bearsGames = [
+          '2014-12-04'
+        ];
+
+        var bullsGames = [
+          '2014-12-25',
+          '2014-12-27'
+        ];
+
+        for (var i = 0; i < availableDates.length; i++) {
+          
+          var clickHandler = (function(handleDate) {
+            var _handleDate = handleDate;
+
+            return function() {
+              console.log("Handling click on", _handleDate);
+              jQuery('#selectedDate').text(prettyPrintDates[_handleDate]);
+
+              console.log("new date selection", _handleDate);
+
+              selectedDate = should.selectedDate = _handleDate;
+
+              render(selectedDate, selectedGameType);
+            }
+
+          })(availableDates[i]);
+          console.log('Attaching click handler to ', 
+            '#date-' + availableDates[i], clickHandler);
+
+          
+          jQuery('#date-' + availableDates[i]).click(clickHandler);
         }
 
         jQuery('input[name="demoDate"]').daterangepicker({
@@ -201,6 +236,8 @@
 
           selectedGameType = should.selectedGameType = "";
 
+          jQuery('#selectedGame').text('No Game - Average');
+
           console.log("No game selection", selectedGameType);
 
           render(selectedDate, selectedGameType);
@@ -211,6 +248,8 @@
 
           selectedGameType = should.selectedGameType = "Bulls";
 
+          jQuery('#selectedGame').text('Bulls Game - Average');
+
           console.log("Bulls game selection", selectedGameType);
 
           render(selectedDate, selectedGameType);
@@ -220,6 +259,8 @@
         jQuery('#bearsGame').click(function () {
 
           selectedGameType = should.selectedGameType = "Bears";
+
+          jQuery('#selectedGame').text('Bears Game - Average');
 
           console.log("Bears game selection", selectedGameType);
 

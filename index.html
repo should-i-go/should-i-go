@@ -347,52 +347,45 @@
       <div class="row" id="demo-row">
             <div class="col-md-8 col-md-offset-2">
                 <div id="demo-controls" class="well">
-
+                  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                   <!-- Split button -->
                   <div class="btn-group">
-                    <button type="button" class="btn btn-default">Dec 14, 2014</button>
+                    <button type="button" id="selectedDate" class="btn btn-default">Dec 4, 2014</button>
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <span class="caret"></span>
                       <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Dec 5, 2014</a></li>
+                      <li id="date-2014-12-04-container">
+                        <a id="date-2014-12-04" href="#section-demo">Dec 4, 2014</a>
+                      </li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="#">Dev 25, 2014</a></li>
-                      <li><a href="#">Dev 27, 2014</a></li>
+                      <li id="date-2014-12-25-container">
+                        <a id="date-2014-12-25" href="#section-demo">Dec 25, 2014</a>
+                      </li>
+                      <li id="date-2014-12-27-container">
+                        <a id="date-2014-12-27" href="#section-demo">Dev 27, 2014</a>
+                      </li>
                     </ul>
                   </div>
 
                   <div class="btn-group">
-                    <button type="button" class="btn btn-primary">No Game - Average</button>
+                    <button type="button" id="selectedGame" class="btn btn-primary">No Game - Average</button>
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <span class="caret"></span>
                       <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Bulls Game - Average</a></li>
-                      <li><a href="#">Bears Game - Average</a></li>
+                      <li><a id="noGame" href="#section-demo">No Game - Average</a></li>
                       <li role="separator" class="divider"></li>
+                      <li><a id="bullsGame" href="#section-demo">Bulls Game - Average</a></li>
+                      <li><a id="bearsGame" href="#section-demo">Bears Game - Average</a></li>
                     </ul>
                   </div>
-                  <!--<span>Select a date to show:</span>-->
-                  <span>
-                    <input type="text" name="demoDate" value="12/14/2014" style="color:black;">
-                  </span>
-                  <span>
-                    <button type="button" id="noGame" class="btn btn-primary">None</button>
-
-                    <!-- Indicates a successful or positive action -->
-                    <button type="button" id="bullsGame" class="btn btn-success">Bulls</button>
-
-                    <!-- Contextual button for informational alert messages -->
-                    <button type="button" id="bearsGame" class="btn btn-info">Bears</button>
-                  </span>
                 </div>
 
                 
                 <div id="map">
-                  <script src="data/chicago_data.js"></script>
                 </div>
             </div>
       </div>
