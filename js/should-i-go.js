@@ -156,13 +156,15 @@
             var baseSpeed = outputRow.SPEED;
             var averageSpeed = parseFloat(averageRow.SPEED);
 
-            var imputedSpeed = baseSpeed + 
-              ( (averageSpeed - baseSpeed) * 8);
+            var imputedSpeed = baseSpeed +
+              ( (averageSpeed - baseSpeed) * 16.0);
 
             if (index < 10) {
               console.log("computePeakSpeed baseSpeed averageSpeed ", 
                 segmentId, baseSpeed, averageSpeed, imputedSpeed);
             }
+
+            outputRow.SPEED = imputedSpeed;
 
           });
 
@@ -220,7 +222,7 @@
               console.log(sampleLat, sampleLong, rowSpeed);
             }
 
-            for (var i = 35 ; (i > rowSpeed) && (i > 0) ; i--) {
+            for (var i = 30 ; (i > rowSpeed) && (i > 12) ; i --) {
               samples.push([ sampleLat, sampleLong ]);
             }
           }); 
@@ -249,7 +251,7 @@
         var prettyPrintDates = {
           '2014-12-04': 'Dec 4, 2014',
           '2014-12-25': 'Dec 25, 2014',
-          '2014-12-27': 'Dec 27, 2015'
+          '2014-12-27': 'Dec 27, 2014'
         }
 
         var bearsGames = [
